@@ -28,10 +28,6 @@ bool is_prime(int n)
 }
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 1e4abe07466867ae94d6e56bf5b7daa45256a429
 
 
 // 1 Generate two large random primes, p and q, of approximate equal size such that their product n = pq 
@@ -109,8 +105,12 @@ keypair generate_keypair(int p, int q){
 //     Other times we might write the key pair as ((N,e),d).]
 
 
+int encrypt(public_key pub_k, int msg)
+{
+    return (int)pow((double)msg, (double)pub_k.d) % pub_k.n;
+}
 
-
+int decrypt(private_key pk)
 
 int main()
 {
