@@ -1,6 +1,29 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
+#include <stdlib.h>
+
+
+typedef struct{
+    int q;
+    int p;
+}primes;
+
+typedef struct{
+    int e;
+    int n;
+}private_key;
+
+
+typedef struct{
+    int d;
+    int n;
+}public_key;
+
+typedef struct{
+    private_key private;
+    public_key public;
+}keypair;
 
 
 
@@ -27,32 +50,6 @@ bool is_prime(int n)
     return true;
 }
 
-
-
-
-
-// 1 Generate two large random primes, p and q, of approximate equal size such that their product n = pq 
-
-typedef struct{
-    int q;
-    int p;
-}primes;
-
-typedef struct{
-    int e;
-    int n;
-}private_key;
-
-
-typedef struct{
-    int d;
-    int n;
-}public_key;
-
-typedef struct{
-    private_key private;
-    public_key public;
-}keypair;
 
 primes primes_input(){
     primes pr;
@@ -84,15 +81,33 @@ int gcd(int a, int b){
 
 }
 
+int generate_random_int_in_range(int lower, int upper){
+    return rand() % (upper-lower+1) + lower;    
+}
+
 keypair generate_keypair(int p, int q){
     
     int n = p * q;
+
+    printf("N = %d \n\n", n);
     int phi = (p-1)*(q-1);
 
-    // Choose integer e
+    // Choose integer e such that gcd(e,phi) = 1)
+    int e;
+    do{
+        e = generate_random_int_in_range(1, phi);
+        printf("Doing \n");
+    }while(gcd(e,phi) != 1);
 
+    int d = multiplicative_inverse(e, phi);
 
+    keypair kp;
+    kp.private.e = e;
+    kp.private.n = n;
+    kp.public.d = d;
+    kp.public.n = n;
 
+    return kp;
 }
 
 // 2. compute n = pq and ϕ = (p-1)(q-1)
@@ -111,14 +126,12 @@ keypair generate_keypair(int p, int q){
 
 int main()
 {
-    //primes pr = primes_input();    
-    //printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
+    primes pr = primes_input();    
+    printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
 
-    int a = 12;
-    int b = 18;
-    int g = gcd(a,b);
 
-    printf("Greatest common divisor of %d and %d = %d \n", a, b, g);
+    keypair kp = generate_keypair(pr.q, pr.p);
+    printf("Generated keys: \n (e, n) = (%d, %d)\n (d, n) = (%d, %d)\n", kp.private.e, kp.private.n, kp.public.d, kp.public.n);
 
     return 0;
 }
