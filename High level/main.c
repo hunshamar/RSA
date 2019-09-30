@@ -42,7 +42,7 @@ int main()
 {
     primes pr = primes_input();    
     printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
-
+    
 
     return 0;
 }
