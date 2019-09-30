@@ -28,18 +28,6 @@ bool is_prime(int n)
 }
 
 
-int phi(n)
-{
-    if (is_prime(n))
-    {
-        return --n;
-    }
-    else
-    {
-        is_prime(n-1)
-    }
-}
-
 
 
 // 1 Generate two large random primes, p and q, of approximate equal size such that their product n = pq 
