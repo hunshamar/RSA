@@ -140,7 +140,8 @@ int main()
 
 
     keypair kp = generate_keypair(pr.q, pr.p);
-    printf("Generated keys: \n (e, n) = (%d, %d)\n (d, n) = (%d, %d)\n", kp.private.e, kp.private.n, kp.public.d, kp.public.n);
+    printf("Generated keys: \n (e, n) = (%d,ys: \n (e, n) = (%d, %d)\n (d, n) = (%d, %d)\n", kp.private.e, kp.private.n, kp.public.d, kp.public.n);
+ %d)\n (d, n) = (%d, %d)\n", kp.private.e, kp.private.n, kp.public.d, kp.public.n);
 
     return 0;
 }
