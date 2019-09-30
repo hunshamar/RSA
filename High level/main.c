@@ -55,26 +55,6 @@ bool is_prime(int n)
 
 // 1 Generate two large random primes, p and q, of approximate equal size such that their product n = pq 
 
-typedef struct{
-    int q;
-    int p;
-}primes;
-
-typedef struct{
-    int e;
-    int n;
-}private_key;
-
-
-typedef struct{
-    int d;
-    int n;
-}public_key;
-
-typedef struct{
-    private_key private;
-    public_key public;
-}keypair;
 
 primes primes_input(){
     primes pr;
