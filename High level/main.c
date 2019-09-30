@@ -44,6 +44,28 @@ int phi(n)
 
 // 1 Generate two large random primes, p and q, of approximate equal size such that their product n = pq 
 
+typedef struct{
+    int q;
+    int p;
+}primes;
+
+primes primes_input(){
+    primes pr;
+    do {
+        printf("Enter first prime: ");
+        scanf("%d", &pr.q);
+    }
+    while(!is_bool(pr.q));
+
+    do {
+        printf("Enter second prime, must be different than first: ");
+        scanf("%d", &pr.p);
+    }
+    while(!is_bool(pr.p) && pr.q != pr.p);
+    return pr;
+
+}
+
 // 2. compute n = pq and ϕ = (p-1)(q-1)
 
 // 3. Choose an integer e, 1 < e < ϕ such that gdc(e,q) = 1 
@@ -59,11 +81,9 @@ int phi(n)
 
 int main()
 {
+    primes pr = primes_input();    
+    printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
 
-    
-
-
-    printf("hei \n");
 
     return 0;
 }
