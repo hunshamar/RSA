@@ -54,9 +54,6 @@ uint32_t modular_exponentiation(uint32_t M, uint32_t e, uint32_t n){ // 32 bit n
 
 int main()
 {
-    //primes pr = primes_input();    
-    //printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
-
     uint32_t a = 3136789;
     uint32_t b = 3216784;
     uint32_t n = 132;
@@ -65,22 +62,13 @@ int main()
     //keypair kp = generate_keypair(pr.q, pr.p);
     //printf("Generated keys: \n (e, n) = (%d, %d)\n (d, n) = (%d, %d)\n", kp.private.e, kp.private.n, kp.public.d, kp.public.n);
 
-    // int M = 19;
-    // int e = 250;
-    // int n = 119;
-
-
-    // return M^e % n
-
-
-    //(number >> n-1 & 0b1 == 1);
-
-  
-
+    int M = 19;
+    int e = 250;
+    int k = 119;
     // 19^250 mod 119
-    // printf("Modular exponentiation normal: %d\n", (int)pow(M, e) % n );
+    printf("Modular exponentiation normal: %d\n", (int)pow(M, e) % k );
 
-    // printf("Modular exponentiation binary %d\n", modular_exponentiation(M,e,n));
+    printf("Modular exponentiation binary %d\n", modular_exponentiation(M,e,k));
 
     return 0;
 }
