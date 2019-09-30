@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <math.h>
 #include <stdlib.h>
-
+#include <stdint.h>
 
 typedef struct{
     int q;
@@ -140,10 +140,8 @@ bool get_bit(int number, int n){
     return (number >> n & 0b1 == 1);
 }
 
-int modular_exponentiation(int M, int e, int n){ // 8 bit number  
-    // Returns C = M^e mod n
-
-    int k = 8;
+uint32_t modular_exponentiation(uint32_t M, uint32_t e, uint32_t n){ // 32 bit number  
+    int k = 32;
     int C;
 
     if  (get_bit(e, k-1) == 1){ // if MSB = 1;
@@ -152,10 +150,11 @@ int modular_exponentiation(int M, int e, int n){ // 8 bit number
     else{
         C = 1;
     }
+
     for (int i = k-2; i >= 0; i--){
-        C = (C*C) % n;
+        C = blakely_algorithm(C,C,n);
         if (get_bit(e, i) == 1){
-            C = (C*M) % n;
+            C = blakely_algorithm(C,M,n);
         }
     }
     return C;
@@ -187,7 +186,6 @@ int main()
 
     printf("Modular exponentiation binary %d\n", modular_exponentiation(M,e,n));
     
-
 
     return 0;
 }
