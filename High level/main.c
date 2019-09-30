@@ -104,7 +104,7 @@ keypair generate_keypair(int p, int q){
         printf("Doing \n");
     }while(gcd(e,phi) != 1);
 
-    int d = multiplicative_inverse(e, phi);
+    int d = 9; //multiplicative_inverse(e, phi);
 
     keypair kp;
     kp.private.e = e;
@@ -128,20 +128,64 @@ keypair generate_keypair(int p, int q){
 
 int encrypt(public_key pub_k, int msg)
 {
-    return (int)pow((double)msg, (double)pub_k.d) % pub_k.n;
+    return (int)pow((double)msg,     (double)pub_k.d) % pub_k.n;
 }
 
-int decrypt(private_key pk)
+int decrypt(private_key pk);
+
+
+// Binary method
+
+bool get_bit(int number, int n){
+    return (number >> n & 0b1 == 1);
+}
+
+int modular_exponentiation(int M, int e, int n){ // 8 bit number  
+    // Returns C = M^e mod n
+
+    int k = 8;
+    int C;
+
+    if  (get_bit(e, k-1) == 1){ // if MSB = 1;
+        C = M;
+    }
+    else{
+        C = 1;
+    }
+    for (int i = k-2; i >= 0; i--){
+        C = (C*C) % n;
+        if (get_bit(e, i) == 1){
+            C = (C*M) % n;
+        }
+    }
+    return C;
+}
 
 int main()
 {
-    primes pr = primes_input();    
-    printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
+    //primes pr = primes_input();    
+    //printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
 
 
-    keypair kp = generate_keypair(pr.q, pr.p);
-    printf("Generated keys: \n (e, n) = (%d,ys: \n (e, n) = (%d, %d)\n (d, n) = (%d, %d)\n", kp.private.e, kp.private.n, kp.public.d, kp.public.n);
- %d)\n (d, n) = (%d, %d)\n", kp.private.e, kp.private.n, kp.public.d, kp.public.n);
+    //keypair kp = generate_keypair(pr.q, pr.p);
+    //printf("Generated keys: \n (e, n) = (%d, %d)\n (d, n) = (%d, %d)\n", kp.private.e, kp.private.n, kp.public.d, kp.public.n);
+
+    int M = 19;
+    int e = 250;
+    int n = 119;
+
+
+    // return M^e % n
+
+
+    //(number >> n-1 & 0b1 == 1);
+
+  
+
+    // 19^250 mod 119
+    printf("Modular exponentiation normal: %d\n", (int)pow(M, e) % n );
+
+    printf("Modular exponentiation binary %d\n", modular_exponentiation(M,e,n));
 
     return 0;
 }
