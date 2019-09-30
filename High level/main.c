@@ -28,6 +28,10 @@ bool is_prime(int n)
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e4abe07466867ae94d6e56bf5b7daa45256a429
 
 
 // 1 Generate two large random primes, p and q, of approximate equal size such that their product n = pq 
@@ -37,20 +41,60 @@ typedef struct{
     int p;
 }primes;
 
+typedef struct{
+    int e;
+    int n;
+}private_key;
+
+
+typedef struct{
+    int d;
+    int n;
+}public_key;
+
+typedef struct{
+    private_key private;
+    public_key public;
+}keypair;
+
 primes primes_input(){
     primes pr;
     do {
         printf("Enter first prime: ");
         scanf("%d", &pr.q);
     }
-    while(!is_bool(pr.q));
+    while(!is_prime(pr.q));
 
     do {
         printf("Enter second prime, must be different than first: ");
         scanf("%d", &pr.p);
     }
-    while(!is_bool(pr.p) && pr.q != pr.p);
+    while(!is_prime(pr.p) || pr.q == pr.p);
     return pr;
+}
+
+// Greatest common divisor
+int gcd(int a, int b){
+    while(a != b){
+        if (a > b){
+            a -= b;
+        }  
+        else{
+            b -= a;
+        }
+    }
+    return a;
+
+}
+
+keypair generate_keypair(int p, int q){
+    
+    int n = p * q;
+    int phi = (p-1)*(q-1);
+
+    // Choose integer e
+
+
 
 }
 
@@ -67,11 +111,17 @@ primes primes_input(){
 
 
 
+
 int main()
 {
-    primes pr = primes_input();    
-    printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
+    //primes pr = primes_input();    
+    //printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
 
+    int a = 12;
+    int b = 18;
+    int g = gcd(a,b);
+
+    printf("Greatest common divisor of %d and %d = %d \n", a, b, g);
 
     return 0;
 }
