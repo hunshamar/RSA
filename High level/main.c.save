@@ -4,8 +4,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-// Binary method
-
 bool get_bit(int number, int n){
     return (number >> n & 0b1 == 1);
 }
@@ -18,7 +16,7 @@ int blakley_algorithm_32_bit(uint32_t a, uint32_t b, uint32_t n)
     {
         R *= 2;
         R += get_bit(a, 31-i)*b;
-        //R = R % n;
+        R = R % n;
         if (R >= n)
         {
             R -= n;
@@ -44,9 +42,9 @@ uint32_t modular_exponentiation(uint32_t M, uint32_t e, uint32_t n){ // 32 bit n
     }
 
     for (int i = k-2; i >= 0; i--){
-        C = blakley_algorithm_32_bit(C,C,n);
+        C = blakely_algorithm(C,C,n);
         if (get_bit(e, i) == 1){
-            C = blakley_algorithm_32_bit(C,M,n);
+            C = blakely_algorithm(C,M,n);
         }
     }
     return C;
@@ -57,17 +55,17 @@ int main()
     //primes pr = primes_input();    
     //printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
 
-    // uint32_t a = 3136789;
-    // uint32_t b = 3216784;
-    // uint32_t n = 132;
+    uint32_t a = 3136789;
+    uint32_t b = 3216784;
+    uint32_t n = 132;
 
-    //printf("%d * %d mod %d = %d \n", a, b, n, blakley_algorithm_32_bit(a, b, n));
+    printf("%d * %d mod %d = %d \n", a, b, n, blakley_algorithm_32_bit(a, b, n));
     //keypair kp = generate_keypair(pr.q, pr.p);
     //printf("Generated keys: \n (e, n) = (%d, %d)\n (d, n) = (%d, %d)\n", kp.private.e, kp.private.n, kp.public.d, kp.public.n);
 
-     int M = 65;
-     int e = 17;
-     int n = 3233;
+    // int M = 19;
+    // int e = 250;
+    // int n = 119;
 
 
     // return M^e % n
@@ -78,9 +76,12 @@ int main()
   
 
     // 19^250 mod 119
-     //printf("Modular exponentiation normal: %d\n", (int)pow(M, e) % n );
+    // printf("Modular exponentiation normal: %d\n", (int)pow(M, e) % n );
 
-     printf("Modular exponentiation binary 19^250 mod 119 =  %d\n", modular_exponentiation(M,e,n));
+<<<<<<< HEAD
+=======
+    // printf("Modular exponentiation binary %d\n", modular_exponentiation(M,e,n));
 
+>>>>>>> f8d8e3ff5c7a98d4eb5e50be8e627243c0d3ffba
     return 0;
 }
