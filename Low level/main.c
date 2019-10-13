@@ -2,6 +2,13 @@
 
 #include <stdio.h>
 
+/*
+    Machine code run by the control logic in the RSA design:
+
+    Now implemented for 32 bit numbers. Can be expanded to 256.
+*/
+
+
 enum instructions{
     conditional_subtraction, // If A >= B return A-B, else return A
     left_shift_A,
@@ -32,7 +39,6 @@ void blakelys_algorithm()
 
     while(!CMP_flag)
     {  
-        
         CMP_flag = ALU_execute_instruction(regs.a, regs.k, return_bit_B_from_A, NULL);  
         ALU_execute_instruction(regs.k, 0, decrement_A, &regs.k);
 
