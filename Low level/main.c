@@ -44,9 +44,7 @@ void blakelys_algorithm()
 
         ALU_execute_instruction(regs.R, regs.n, conditional_subtraction, &regs.R);
         ALU_execute_instruction(regs.R, regs.n, conditional_subtraction, &regs.R);
-    
-        if (regs.R >= regs.n) for (int i = 0; i < 10; i++) printf("FUUUCK \n"); // test
-        
+
         ALU_execute_instruction(regs.j, 0, increment_A, &regs.j);
         CMP_flag = ALU_execute_instruction(regs.j, regs.T2, comp_registers_A_B, NULL);   
     }
