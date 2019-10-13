@@ -54,12 +54,6 @@ uint32_t modular_exponentiation(uint32_t M, uint32_t e, uint32_t n){ // 32 bit n
 
 int main()
 {
-    //primes pr = primes_input();    
-    //printf("You entered primes p: %d and q: %d \n", pr.q, pr.p);
-
-    // uint32_t a = 3136789;
-    // uint32_t b = 3216784;
-    // uint32_t n = 132;
 
     //printf("%d * %d mod %d = %d \n", a, b, n, blakley_algorithm_32_bit(a, b, n));
     //keypair kp = generate_keypair(pr.q, pr.p);
