@@ -22,16 +22,19 @@ void blakelys_algorithm()
 {    
     ALU_execute_instruction(0,0,ret_0, &regs.R);
     ALU_execute_instruction(0,0, ret_0, &regs.j);
+    ALU_execute_instruction(0,0, ret_31, &regs.k);
+
+
     ALU_execute_instruction(0,0, ret_31, &regs.T2);
     ALU_execute_instruction(regs.T2, 0, increment_A, &regs.T2);
-   
+    
     CMP_flag = ALU_execute_instruction(regs.j, regs.T2, comp_registers_A_B, NULL);
 
     while(!CMP_flag)
     {  
-
-        CMP_flag = ALU_execute_instruction(regs.a, 31-regs.j, return_bit_B_from_A, NULL);  
-
+        
+        CMP_flag = ALU_execute_instruction(regs.a, regs.k, return_bit_B_from_A, NULL);  
+        ALU_execute_instruction(regs.k, 0, decrement_A, &regs.k);
 
         if (CMP_flag){ 
             ALU_execute_instruction(regs.R, regs.b, left_shift__A_and_add_B, &regs.R);
