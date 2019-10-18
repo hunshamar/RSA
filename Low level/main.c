@@ -115,7 +115,7 @@ int main(){
     binary_method();
 
     printf("\nTests: ---------------------------------------------\n");
-     printf("test: binary method 19^250 mod 119             =  %d,  should be 2790\n", regs.C);
+    printf("test: binary method 19^250 mod 119             =  %d,  should be 2790\n", regs.C);
 
 
     regs.ed = 3;
