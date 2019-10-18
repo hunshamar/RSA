@@ -74,7 +74,7 @@ int main()
     // 19^250 mod 119
      //printf("Modular exponentiation normal: %d\n", (int)pow(M, e) % n );
 
-     printf("Modular exponentiation binary 19^250 mod 119 =  %d\n", modular_exponentiation(M,e,n));
+     printf("Modular exponentiation  binary 19^250 mod 119 =  %d\n", modular_exponentiation(M,e,n));
 
     return 0;
 }
