@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct 24 14:26:39 2019
+# Process ID: 1512
+# Current directory: C:/Users/asgei/Desktop/RSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7932 C:\Users\asgei\Desktop\RSA\RSA.xpr
+# Log file: C:/Users/asgei/Desktop/RSA/vivado.log
+# Journal file: C:/Users/asgei/Desktop/RSA\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/asgei/Desktop/RSA/RSA.xpr
+update_compile_order -fileset sources_1
