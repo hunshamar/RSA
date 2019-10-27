@@ -40,7 +40,7 @@ void blakelys_algorithm()
     while(!CMP_flag)
     {  
         CMP_flag = ALU_execute_instruction(regs.a, regs.k, return_bit_B_from_A, NULL);  
-        ALU_execute_instruction(regs.k, 0, decrement_A, &regs.k);
+        ALU_execute_instruction(regs.f, 0, decrement_A, &regs.k);
 
         if (CMP_flag){ 
             ALU_execute_instruction(regs.R, regs.b, left_shift__A_and_add_B, &regs.R);
