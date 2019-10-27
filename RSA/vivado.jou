@@ -17,3 +17,7 @@ source Core_tb.tcl
 run 2 us
 relaunch_sim
 run 2 us
+relaunch_sim
+run 2 us
+relaunch_sim
+run 2 us
