@@ -129,35 +129,35 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
     --msgout_data <= (others => '1');
         if (msgin_valid = '1') then
            
-           ed_reg <= key_ed;
-           n_Reg <= key_n;
-           m_reg <= msgin_data;
+--           ed_reg <= key_ed;
+--           n_Reg <= key_n;
+--           m_reg <= msgin_data;
            
            
            
            
             case program_counter is
---                when "00000011" =>
---                  ed_reg <= x2 & "0010011100010000"; --a
---                  A <= ed_reg;
---                  ALU_inst <= "0111"; --ret A
---                  write_signal <= "0100";
+                when "00000011" =>
+                  ed_reg <= x2 & "0010011100010000"; --a
+                  A <= ed_reg;
+                  ALU_inst <= "0111"; --ret A
+                  write_signal <= "0100";
                   
---                when "00000100" =>
---                  m_reg <= x2 & "0000000100101100"; -- b
---                  A <= m_reg;
---                  ALU_inst <= "0111"; --ret A
---                  write_signal <= "0101";
+                when "00000100" =>
+                  m_reg <= x2 & "0000000100101100"; -- b
+                  A <= m_reg;
+                  ALU_inst <= "0111"; --ret A
+                  write_signal <= "0101";
                   
---                when "00000101" =>
---                  n_reg <= x2 & "0000110010100001"; --n
---                  write_signal <= "1111";
---                when "00000110" => --blakely
---                  --n_reg <= x1 & "00000100";    
---                  msgout_valid <= '1';
---                  write_signal <= "1111"; -- No_reg
---                  A <= a_reg;
---                  ALU_inst <= "0111";        
+                when "00000101" =>
+                  n_reg <= x2 & "0000110010100001"; --n
+                  write_signal <= "1111";
+                when "00000110" => --blakely
+                  --n_reg <= x1 & "00000100";    
+                  msgout_valid <= '1';
+                  write_signal <= "1111"; -- No_reg
+                  A <= a_reg;
+                  ALU_inst <= "0111";        
                     
                     
                          
@@ -209,7 +209,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     end if;
                     
                 when "00010000" => 
-                        msgout_valid <= '0';
+                    msgout_valid <= '0';
                     A <= R_Reg;
                     B <= n_reg;
                     ALU_inst <= "0000";
