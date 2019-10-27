@@ -3,4 +3,9 @@
 May 24 2019
 15:06:07
 C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sim_1/new/ALU_testbench.vhd,1571920874,vhdl,,,,alu_tb,,,,,,,,
-C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd,1571920872,vhdl,,,,alu,,,,,,,,
+C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sim_1/new/MUX_tb.vhd,1571922538,vhdl,,,,mux_tb,,,,,,,,
+C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sim_1/new/core_tb.vhd,1572181743,vhdl,,,,core_tb,,,,,,,,
+C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd,1572184262,vhdl,C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd,,,alu,,,,,,,,
+C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd,1572184306,vhdl,C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd,,,control,,,,,,,,
+C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd,1572178603,vhdl,,,,core,,,,,,,,
+C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/MUX.vhd,1571922175,vhdl,,,,mux,,,,,,,,

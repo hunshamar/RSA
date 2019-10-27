@@ -32,84 +32,85 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Core is
-    Port ( key_ed : in STD_LOGIC_VECTOR (255 downto 0);
+    Port ( --Core input and outputs
+           key_ed : in STD_LOGIC_VECTOR (255 downto 0);
            key_n : in STD_LOGIC_VECTOR (255 downto 0);
            msgin_data : in STD_LOGIC_VECTOR (255 downto 0);
            msgin_valid : in STD_LOGIC;
-           msgin_last : in STD_LOGIC;
-           msgout_ready : in STD_LOGIC;
-           msgin_ready : out STD_LOGIC;
            msgout_data : out STD_LOGIC_VECTOR (255 downto 0);
            msgout_valid : out STD_LOGIC;
-           msgout_last : out STD_LOGIC);
+           program_c_r : out STD_LOGIC_VECTOR (7 downto 0);
+           ALU_R_r     : out STD_LOGIC_VECTOR (255 downto 0);
+           
+           
+--            -- ALU inputs
+--            A : in STD_LOGIC_VECTOR (255 downto 0);
+--            B : in STD_LOGIC_VECTOR (255 downto 0);
+--            ALU_select_instr : in STD_LOGIC_VECTOR (3 downto 0);
+        
+--            --ALU outputs
+--            ALU_output: out STD_LOGIC_VECTOR (255 downto 0);
+--            CMP_FLAG : out STD_LOGIC;
+             
+--             --Control inputs
+  --          c_key_ed : in STD_LOGIC_VECTOR (255 downto 0);
+            clk : in STD_LOGIC; --
+            reset_n : in STD_LOGIC; --
+ --           c_key_n : in STD_LOGIC_VECTOR (255 downto 0);
+--           c_msgin_data : in STD_LOGIC_VECTOR (255 downto 0);
+--           c_msgin_valid : in STD_LOGIC;
+--           c_CMP_flag : in STD_LOGIC;
+--           ALU_R : in STD_LOGIC_VECTOR (255 downto 0);
+           
+--           --Control outputs
+            CLK_flag : out STD_LOGIC 
+--           A_out : out STD_LOGIC_VECTOR (255 downto 0);
+--           B_out : out STD_LOGIC_VECTOR (255 downto 0);
+--           c_msgout_valid : out STD_LOGIC;
+--           c_msgout_data : out STD_LOGIC_VECTOR (255 downto 0);
+--           ALU_inst : out STD_LOGIC_VECTOR (3 downto 0)
+           );
 end Core;
 
-architecture Behavioral of Core is
-
-    --registers
-    signal ed_reg : std_logic_vector(255 downto 0);
-    signal n_reg : std_logic_vector(255 downto 0);
-    signal m_reg : std_logic_vector(255 downto 0);
-    signal c_reg : std_logic_vector(255 downto 0);
-    signal a_reg : std_logic_vector(255 downto 0);
-    signal b_reg : std_logic_vector(255 downto 0);
-    signal R_reg : std_logic_vector(255 downto 0);
-    signal i_reg : std_logic_vector(255 downto 0);
-    signal j_reg : std_logic_vector(255 downto 0);
-    signal k_reg : std_logic_vector(255 downto 0);
-    signal T1_reg : std_logic_vector(255 downto 0);
-    signal T2_reg : std_logic_vector(255 downto 0);
     
-    --Logic outputs
-    signal write_enable : std_logic_vector(11 downto 0);
-    signal ALU_inst : std_logic_vector(3 downto 0);
-    signal A_mux : std_logic_vector(3 downto 0);
-    signal B_mux : std_logic_vector(3 downto 0);
-    
-    --ALU outputs
-    signal ALU_output : std_logic_vector(255 downto 0);
-    signal CMP_flag : STD_LOGIC;
-    
-    
-    
-    
-begin
-    process(key_ed, msgin_valid)
-    begin
-    if (msgin_valid = '1') then
-        ed_reg <= key_ed;
-        n_reg <= key_n;
-        m_reg <= msgin_data; 
-        -- ALU with inst 1010 write to C_register, mux inputs redudant, set to zero for example. 
-        
-        
-        
-        
-         
-    else
-        -- do nothing
-    end if;   
-    end process;
-
-end Behavioral;
-    
-    
-architecture ALU of Core is
+architecture behavoir of Core is
+    signal temp_A : STD_LOGIC_VECTOR (255 downto 0);
+    signal temp_B : STD_LOGIC_VECTOR (255 downto 0);
+    signal ALU_select_instr_temp : STD_LOGIC_VECTOR (3 downto 0);
+    signal temp_ALU_output : STD_LOGIC_VECTOR (255 downto 0);
+    signal temp_CMP_flag : STD_LOGIC;
 begin
 i_ALU : entity work.ALU
     
     port map (
-        --clk   => msgin_data  ,
-        --reset_n       => key_e_d     ,
-        --A  => msgin_ready ,
-        --B => msgout_ready,
-        ALU_select_instr => ALU_inst,
-        ALU_output    => ALU_output ,
-        CMP_FLAG   => CMP_flag       ,
-        --CLK_output       => clk      
+        ALU_select_instr => ALU_select_instr_temp,
+        ALU_output    => temp_ALU_output ,
+        CMP_FLAG   => temp_CMP_flag ,
+        A => temp_A,
+        B => temp_B
     );
 
-msgout_last  <= msgin_last;
-end ALU;
+i_CTRL : entity work.Control
+    
+    port map (
+        key_ed => key_ed,
+        clk => clk,
+        reset_n => reset_n,
+        key_n => key_n,
+        msgin_data => msgin_data,
+        msgin_valid => msgin_valid, 
+        CMP_flag => temp_CMP_flag,
+        ALU_R => temp_ALU_output,
+        CLK_flag => CLK_flag,
+        A => temp_A,
+        B  => temp_B,
+        msgout_valid => msgout_valid,
+        msgout_data  => msgout_data,
+        ALU_inst => ALU_select_instr_temp,
+        program_c_r => program_c_r,
+        ALU_R_r     => ALU_R_r
+    );
+
+end behavoir;
 
     

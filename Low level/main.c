@@ -10,17 +10,17 @@
 
 
 enum instructions{
-    conditional_subtraction, // If A >= B return A-B, else return A
-    left_shift_A,
-    left_shift__A_and_add_B,
-    return_bit_B_from_A,
-    comp_registers_A_B,
-    decrement_A,
-    increment_A,
-    ret_A,
-    ret_0,
-    ret_1,
-    ret_31
+    conditional_subtraction,    // 0 If A >= B return A-B, else return A
+    left_shift_A,               // 1
+    left_shift__A_and_add_B,    // 2
+    return_bit_B_from_A,        // 3 
+    comp_registers_A_B,         // 4
+    decrement_A,                // 5 
+    increment_A,                // 6
+    ret_A,                      // 7 
+    ret_0,                      // 8
+    ret_1,                      // 9
+    ret_31                      // 10
 };
 
 bool CMP_flag;

@@ -23,10 +23,14 @@ end ALU;
 
 architecture Behavioral of ALU is
 
+signal A_reg : std_logic_vector(255 downto 0);
+signal B_reg : std_logic_vector(255 downto 0);
 
 begin
     process(A,B,ALU_select_instr)
     begin
+        A_reg <= A;
+        B_reg <= B;
         case(ALU_select_instr) is
         when "0000" => -- conditional subtraction. If A >= B return A-B, else return A
             CMP_flag <= '0'; 
@@ -53,7 +57,7 @@ begin
             end if;
         when "0101" => -- decrement A
             CMP_flag <= '0'; 
-            ALU_output<= std_logic_vector(unsigned(A)-1);
+            ALU_output<= A-1;
         when "0110" => -- increment A
             CMP_flag <= '0'; 
             ALU_output<= A+1;
