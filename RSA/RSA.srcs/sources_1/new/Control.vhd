@@ -137,22 +137,27 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
            
            
             case program_counter is
+            
+                
                 when "00000011" =>
+                    jmp <= "01000011";
+                when "01000011" =>
+                    jmp <= "00000000";
                   ed_reg <= x2 & "0010011100010000"; --a
                   A <= ed_reg;
                   ALU_inst <= "0111"; --ret A
                   write_signal <= "0100";
                   
-                when "00000100" =>
+                when "01000100" =>
                   m_reg <= x2 & "0000000100101100"; -- b
                   A <= m_reg;
                   ALU_inst <= "0111"; --ret A
                   write_signal <= "0101";
                   
-                when "00000101" =>
+                when "01000101" =>
                   n_reg <= x2 & "0000110010100001"; --n
                   write_signal <= "1111";
-                when "00000110" => --blakely
+                when "01000110" => --blakely
                   --n_reg <= x1 & "00000100";    
                   msgout_valid <= '1';
                   write_signal <= "1111"; -- No_reg
@@ -161,41 +166,41 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     
                     
                          
-                when "00000111" =>
+                when "01000111" =>
                 msgout_valid <= '0';
                   ALU_inst <= "1000"; --return 0
                   write_signal <= "0110"; --R_Reg
-                when "00001000" =>
+                when "01001000" =>
                   ALU_inst <= "1000"; --return 0
                   write_signal <= "1000"; --j_reg
-                when "00001001" =>
+                when "01001001" =>
                   ALU_inst <= "1010"; --return 255
                   write_signal <= "1001"; --k_reg
-                when "00001010" =>
+                when "01001010" =>
                   ALU_inst <= "1010"; --return 255
                   write_signal <= "1011"; -- T2_reg
-                when "00001011" =>
+                when "01001011" =>
                   A <= T2_reg;
                   ALU_inst <= "0110"; --increment by 1;
                   write_signal <= "1011"; -- T2_reg
-                when "00001100" =>
+                when "01001100" =>
                   jmp <= "00000000";
-                when "00001101" =>
+                when "01001101" =>
                   write_signal <= "1111"; -- No_reg
                   A <=  j_reg;
                   B <=  T2_reg;
                   ALU_inst <= "0100"; -- comp_registers_A_B
                   if CMP_flag = '1' then
-                    jmp <= "10001100"; -- jmp past loop
+                    jmp <= "01101100"; -- jmp past loop
                   end if;           
                   
-                when "00001110" =>  
+                when "01001110" =>  
                    write_signal <= "1111"; -- No_reg
                     A <= a_reg;
                     B <= k_reg;
                     ALU_inst <= "0011"; -- return bit B from A
 --                   
-                when "00001111" => 
+                when "01001111" => 
                     
                     A <= R_reg;
                     B <= b_reg;
@@ -208,30 +213,30 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                         ALU_inst <= "0001"; --left shift A
                     end if;
                     
-                when "00010000" => 
+                when "01010000" => 
                     msgout_valid <= '0';
                     A <= R_Reg;
                     B <= n_reg;
                     ALU_inst <= "0000";
                     write_signal <= "0110"; -- R_reg
-                when "00010001" => 
+                when "01010001" => 
                     A <= R_Reg;
                     B <= n_reg;
                     ALU_inst <= "0000";
                     write_signal <= "0110"; -- R_reg
                     
-                when "00010010" =>  ----
+                when "01010010" =>  ----
                     A <= k_reg;
                     ALU_inst <= "0101"; --decrement
                     write_signal <= "1001"; -- k_reg
                     
-                when "00010011" => 
+                when "01010011" => 
                     A <= j_reg;
                     ALU_inst <= "0110"; --increment
                     write_signal <= "1000"; -- j_reg
-                    jmp <= "00001100";
+                    jmp <= "01001100";
                   
-                when "10001100" => -- after while
+                when "01101100" => -- after while
                     write_signal <= "1111"; -- no reg
                     jmp <= "00000000";
                     A <= R_reg;
