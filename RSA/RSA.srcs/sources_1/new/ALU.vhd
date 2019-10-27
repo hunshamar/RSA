@@ -58,7 +58,7 @@ begin
             CMP_flag <= '0'; 
             ALU_output<= A+1;
         when "0111" => -- return data from A
-            CMP_flag <= '0'; 
+            CMP_flag <= '1'; 
             ALU_output<= A;
         when "1000" =>  -- return 0
             CMP_flag <= '0'; 

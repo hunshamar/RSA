@@ -129,34 +129,91 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
     --msgout_data <= (others => '1');
         if (msgin_valid = '1') then
            
---           ed_reg <= key_ed;
---           n_Reg <= key_n;
---           m_reg <= msgin_data;
+           ed_reg <= key_ed;
+           n_Reg <= key_n;
+           m_reg <= msgin_data;
            
            
            
            
             case program_counter is
             
+--                when "00000011" => --blakely
+--                  --n_reg <= x1 & "00000100";    
+--                  --msgout_valid <= '1';
+--                  write_signal <= "0111"; -- No_reg
+--                  --A <= a_reg;
+--                  ALU_inst <= "1010"; 
+                  
+                  
+                 when "00000011" =>
+                    write_signal <= "0111";
+                    ALU_inst <= "1010"; --ret 255;
+                    
                 
-                when "00000011" =>
-                    jmp <= "01000011";
-                when "01000011" =>
-                    jmp <= "00000000";
-                  ed_reg <= x2 & "0010011100010000"; --a
-                  A <= ed_reg;
-                  ALU_inst <= "0111"; --ret A
-                  write_signal <= "0100";
+                when "00000100" =>
+                    A <= ed_reg;
+                    B <= i_reg;
+                    ALU_inst <= "0011"; --ret bit B from A
+                    write_signal <= "1111";
+                
+                when "00000101" =>
+                    write_signal <= "0011"; -- C_reg
+                    A <= M_reg;
+                    if CMP_flag = '1' then
+                        ALU_inst <= "0111"; --ret_A
+                    else
+                        ALU_inst <= "1001"; --ret 0
+                    end if;
+                
+                when "00000110" =>
+                   write_signal <= "1010"; --T1
+                   ALU_inst <= "1000"; --ret 0
+                   
+                   
+               when "00000111" =>
+                   jmp <= "00000000";
+                   
+                when "00001000" =>
+                   write_signal <= "1111"; --no write
+                   A <= i_reg;
+                   B <= T1_reg;
+                   ALU_inst <= "0100"; --cmp A== B
+                   if cmp_flag = '1' then
+                      jmp <= "10100001";  -- jump to end of loop
+                   else 
+                      jmp <= "10000001"; --enter loop
+                   end if;
+                   
+                 
+                when "10000001" =>
+                    jmp <= "00000111";
+                    write_signal <= "0111"; --i_reg
+                    A <= i_reg;
+                    ALU_inst <= "0101"; -- decrement i
+                    
+                    
+                    
+                    
+                    
+--                when "01000011" =>
+--                    jmp <= "00000000";
+--                  ed_reg <= x2 & "0010011100010000"; --a
+--                  A <= ed_reg;
+--                  ALU_inst <= "0111"; --ret A
+--                  write_signal <= "0100";
                   
-                when "01000100" =>
-                  m_reg <= x2 & "0000000100101100"; -- b
-                  A <= m_reg;
-                  ALU_inst <= "0111"; --ret A
-                  write_signal <= "0101";
+--                when "01000100" =>
+--                  m_reg <= x2 & "0000000100101100"; -- b
+--                  A <= m_reg;
+--                  ALU_inst <= "0111"; --ret A
+--                  write_signal <= "0101";
                   
-                when "01000101" =>
-                  n_reg <= x2 & "0000110010100001"; --n
-                  write_signal <= "1111";
+--                when "01000101" =>
+--                  n_reg <= x2 & "0000110010100001"; --n
+--                  write_signal <= "1111";
+
+
                 when "01000110" => --blakely
                   --n_reg <= x1 & "00000100";    
                   msgout_valid <= '1';
@@ -243,6 +300,13 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     ALU_inst <= "0111"; 
                   msgout_valid <= '1';
                   
+                  
+                
+                when "10100001" =>
+                    --done
+                    jmp <= "00000000";
+                    msgout_valid <= '1';
+                   
                   
                 when others => 
 --                msgout_data <= (others => '1');
