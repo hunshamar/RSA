@@ -60,9 +60,11 @@ begin
     wait for 1*clk_period;
     reset_n <= '1';    
     
-    msgin_data <= x2 & "00000000" & "00010011";
-    key_ed <=     x2 & "00000000" & "11111010";
-    key_n <=      x2 & "00000000" & "01110111";
+    
+    --M^(ed) mod n
+    msgin_data <= x2 & "00000101" & "00001001";
+    key_ed <=    x2 & "00000000" &  "00000011"; --(others => '1') ; 
+    key_n <=      x2 & "01100100" & "10110001";
     msgin_valid <= '1';
 
     -- Put test bench stimulus code here

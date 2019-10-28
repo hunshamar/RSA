@@ -75,6 +75,7 @@ signal x1 : STD_LOGIC_VECTOR (247 downto 0) := (others => '0');
 signal x2 : STD_LOGIC_VECTOR (239 downto 0) := (others => '0');
 signal program_counter : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
 signal jmp : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+signal blakley_2 : std_logic := '0';
 
 begin
 
@@ -172,6 +173,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                    
                    
                when "00000111" =>
+                   blakley_2 <= '0';
                    jmp <= "00000000";
                    
                 when "00001000" =>
@@ -212,8 +214,45 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     write_signal <= "0101"; --b_reg
                     A <= C_reg;
                     ALU_inst <= "0111"; -- RetA
-                    jmp <= "01000110";   
+                    jmp <= "01000110"; -- run blakely 1
                        
+                       
+                 when "10000110" => --Blakely 2
+                    jmp <= "00000000";
+                    blakley_2 <= '1';
+                    msgout_data <= x1 & "11111110";
+                    
+                when "10000111" => 
+                    --jmp <= "01101100";
+                    msgout_data <= x1 & "00000000";
+                    
+                when "10001000" => --blakley check
+                    A <= ed_reg;
+                    B <= i_reg;
+                    ALU_inst <= "0011"; --return bit b from A
+                    write_signal <= "1111"; --no write
+                    if CMP_flag = '1' then
+                        jmp <= "00000000"; --continue
+                        msgout_data <=  i_Reg;
+                    else 
+                        jmp <= "00000111"; --dont do blakley 2       
+                        msgout_data <=  x1 & "00000000";         
+                    end if;
+                    
+               when "10001001" =>
+                    msgout_data <= x1 & "00000000";
+                    write_signal <= "0100"; --a_reg
+                    A <= C_reg;
+                    ALU_inst <= "0111"; -- RetA
+                 when "10001010" =>
+                    write_signal <= "0101"; --b_reg
+                    A <= M_reg;
+                    ALU_inst <= "0111"; -- RetA
+                    jmp <= "01000110"; -- run blakely 1
+                    
+                    
+                
+                    
                     
 --                when "01000011" =>
 --                    jmp <= "00000000";
@@ -232,8 +271,9 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
 --                  n_reg <= x2 & "0000110010100001"; --n
 --                  write_signal <= "1111";
 
+                
 
-                when "01000110" => --blakely
+                when "01000110" => --blakely 
                   jmp <= "00000000";
                   --n_reg <= x1 & "00000100";    
                   msgout_valid <= '1';
@@ -315,10 +355,14 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                   
                 when "01101100" => -- after while
                     write_signal <= "0011"; -- C reg
-                    jmp <= "00000111";
+                    if blakley_2 = '0' then
+                        jmp <= "10000110"; --do second
+                    else
+                        jmp <= "00000111"; --done with second. back to start. 
+                    end if;
                     A <= R_reg;
                     ALU_inst <= "0111"; 
-                  msgout_valid <= '1';
+                    msgout_valid <= '1';
                   
                   
                 
