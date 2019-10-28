@@ -250,28 +250,6 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     ALU_inst <= "0111"; -- RetA
                     jmp <= "01000110"; -- run blakely 1
                     
-                    
-                
-                    
-                    
---                when "01000011" =>
---                    jmp <= "00000000";
---                  ed_reg <= x2 & "0010011100010000"; --a
---                  A <= ed_reg;
---                  ALU_inst <= "0111"; --ret A
---                  write_signal <= "0100";
-                  
---                when "01000100" =>
---                  m_reg <= x2 & "0000000100101100"; -- b
---                  A <= m_reg;
---                  ALU_inst <= "0111"; --ret A
---                  write_signal <= "0101";
-                  
---                when "01000101" =>
---                  n_reg <= x2 & "0000110010100001"; --n
---                  write_signal <= "1111";
-
-                
 
                 when "01000110" => --blakely 
                   jmp <= "00000000";

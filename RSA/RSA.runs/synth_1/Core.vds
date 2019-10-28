@@ -1,0 +1,345 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Oct 28 13:29:21 2019
+# Process ID: 4208
+# Current directory: C:/Users/asgei/Desktop/RSA/RSA/RSA.runs/synth_1
+# Command line: vivado.exe -log Core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Core.tcl
+# Log file: C:/Users/asgei/Desktop/RSA/RSA/RSA.runs/synth_1/Core.vds
+# Journal file: C:/Users/asgei/Desktop/RSA/RSA/RSA.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Core.tcl -notrace
+Command: synth_design -top Core -part xc7z010iclg225-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10368 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 470.000 ; gain = 178.316
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Core' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (1#1) [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'Control' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+WARNING: [Synth 8-614] signal 'ed_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'i_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'm_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'T1_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'c_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'x1' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'a_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'T2_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'j_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'k_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'R_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'b_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'n_reg' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+WARNING: [Synth 8-614] signal 'blakley_2' is read in the process but is not in the sensitivity list [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:128]
+INFO: [Synth 8-256] done synthesizing module 'Control' (2#1) [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'Core' (3#1) [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 533.500 ; gain = 241.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 533.500 ; gain = 241.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010iclg225-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 533.500 ; gain = 241.816
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010iclg225-1L
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:30]
+INFO: [Synth 8-5546] ROM "write_signal" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "B" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "blakley_2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "msgout_data" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'A_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:156]
+WARNING: [Synth 8-327] inferring latch for variable 'B_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:157]
+WARNING: [Synth 8-327] inferring latch for variable 'msgout_valid_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:257]
+WARNING: [Synth 8-327] inferring latch for variable 'msgout_data_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:223]
+WARNING: [Synth 8-327] inferring latch for variable 'ALU_inst_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:152]
+WARNING: [Synth 8-327] inferring latch for variable 'jmp_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:90]
+WARNING: [Synth 8-327] inferring latch for variable 'ed_reg_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:133]
+WARNING: [Synth 8-327] inferring latch for variable 'm_reg_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:135]
+WARNING: [Synth 8-327] inferring latch for variable 'write_signal_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:102]
+WARNING: [Synth 8-327] inferring latch for variable 'n_reg_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-327] inferring latch for variable 'blakley_2_reg' [C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:176]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 575.379 ; gain = 283.695
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input    256 Bit       Adders := 1     
+	   2 Input    256 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	              256 Bit    Registers := 10    
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    256 Bit        Muxes := 2     
+	  12 Input    256 Bit        Muxes := 2     
+	   8 Input    256 Bit        Muxes := 1     
+	  10 Input    256 Bit        Muxes := 1     
+	   7 Input    256 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	  33 Input      8 Bit        Muxes := 1     
+	  33 Input      4 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	  33 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 9     
+	  33 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input    256 Bit       Adders := 1     
+	   2 Input    256 Bit       Adders := 1     
++---Muxes : 
+	   2 Input    256 Bit        Muxes := 1     
+	  12 Input    256 Bit        Muxes := 2     
+	   8 Input    256 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 1     
+Module Control 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	              256 Bit    Registers := 10    
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  10 Input    256 Bit        Muxes := 1     
+	   7 Input    256 Bit        Muxes := 1     
+	   2 Input    256 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	  33 Input      8 Bit        Muxes := 1     
+	  33 Input      4 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
+	  33 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 9     
+	  33 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "i_CTRL/B" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i_CTRL/msgout_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i_CTRL/write_signal" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i_CTRL/blakley_2" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 906.598 ; gain = 614.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|Control     | A          | 256x1         | LUT            | 
+|Core        | i_CTRL/A   | 256x1         | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:53 . Memory (MB): peak = 906.598 ; gain = 614.914
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 906.598 ; gain = 614.914
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 906.598 ; gain = 614.914
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:03 ; elapsed = 00:01:03 . Memory (MB): peak = 906.598 ; gain = 614.914
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:03 ; elapsed = 00:01:03 . Memory (MB): peak = 906.598 ; gain = 614.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:03 ; elapsed = 00:01:03 . Memory (MB): peak = 906.598 ; gain = 614.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 906.598 ; gain = 614.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:01:04 . Memory (MB): peak = 906.598 ; gain = 614.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     3|
+|2     |CARRY4 |   163|
+|3     |LUT1   |     1|
+|4     |LUT2   |   263|
+|5     |LUT3   |   774|
+|6     |LUT4   |   272|
+|7     |LUT5   |  1069|
+|8     |LUT6   |  1146|
+|9     |MUXF7  |   292|
+|10    |MUXF8  |    17|
+|11    |FDCE   |     1|
+|12    |FDRE   |  2581|
+|13    |LD     |  1564|
+|14    |IBUF   |   771|
+|15    |OBUF   |   522|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+--------+------+
+|      |Instance |Module  |Cells |
++------+---------+--------+------+
+|1     |top      |        |  9439|
+|2     |  i_CTRL |Control |  8143|
++------+---------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:01:04 . Memory (MB): peak = 906.598 ; gain = 614.914
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:01:04 . Memory (MB): peak = 906.598 ; gain = 614.914
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:01:04 . Memory (MB): peak = 906.598 ; gain = 614.914
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2036 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'Core' is not ideal for floorplanning, since the cellview 'Control' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 906.598 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1564 instances were transformed.
+  LD => LDCE: 1564 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 906.598 ; gain = 614.914
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 906.598 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/asgei/Desktop/RSA/RSA/RSA.runs/synth_1/Core.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Core_utilization_synth.rpt -pb Core_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 28 13:30:52 2019...

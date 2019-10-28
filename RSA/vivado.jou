@@ -44,3 +44,22 @@ relaunch_sim
 run 1000 us
 relaunch_sim
 run 1000 us
+relaunch_sim
+run 1000 us
+relaunch_sim
+run 1000 us
+relaunch_sim
+run 1000 us
+run 1000 us
+relaunch_sim
+relaunch_sim
+run 1000 us
+relaunch_sim
+run 1000 us
+relaunch_sim
+run 1000 us
+relaunch_sim
+run 1000 us
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
