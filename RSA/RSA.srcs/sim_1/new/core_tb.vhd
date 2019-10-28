@@ -35,6 +35,7 @@ architecture bench of Core_tb is
   constant clk_period : time := 1 ns;
   signal program_c_r: STD_LOGIC_VECTOR (7 downto 0);
   signal ALU_R_r     :  STD_LOGIC_VECTOR (255 downto 0);
+  signal x2 : STD_LOGIC_VECTOR (239 downto 0) := (others => '0');
 
 begin
  clk <= not clk after clk_period/2;
@@ -59,9 +60,9 @@ begin
     wait for 1*clk_period;
     reset_n <= '1';    
     
-    key_ed <= (7 downto 0 => '1', others => '0');
-    key_n <= (10 downto 0 => '1', others => '0');
-    msgin_data <= (5 downto 0 => '1', others => '0');
+    msgin_data <= x2 & "00000000" & "00010011";
+    key_ed <=     x2 & "00000000" & "11111010";
+    key_n <=      x2 & "00000000" & "01110111";
     msgin_valid <= '1';
 
     -- Put test bench stimulus code here

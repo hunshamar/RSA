@@ -187,14 +187,33 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                    
                  
                 when "10000001" =>
-                    jmp <= "00000111";
+                    jmp <= "00000000";
                     write_signal <= "0111"; --i_reg
                     A <= i_reg;
                     ALU_inst <= "0101"; -- decrement i
                     
                     
-                    
-                    
+                when "10000010" =>
+                    write_signal <= "1111"; --no write
+                    A <= C_reg;
+                    ALU_inst <= "0111"; -- RetA
+                    --jmp <= "00000111";
+                when "10000011" =>
+                    write_signal <= "1111"; --no write
+                    A <= ed_reg;
+                    ALU_inst <= "0111"; -- RetA
+                    --jmp <= "00000111";    
+                 when "10000100" =>
+                    write_signal <= "0100"; --a_reg
+                    A <= C_reg;
+                    ALU_inst <= "0111"; -- RetA
+                    --jmp <= "00000111";   
+                 when "10000101" =>
+                    write_signal <= "0101"; --b_reg
+                    A <= C_reg;
+                    ALU_inst <= "0111"; -- RetA
+                    jmp <= "01000110";   
+                       
                     
 --                when "01000011" =>
 --                    jmp <= "00000000";
@@ -215,6 +234,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
 
 
                 when "01000110" => --blakely
+                  jmp <= "00000000";
                   --n_reg <= x1 & "00000100";    
                   msgout_valid <= '1';
                   write_signal <= "1111"; -- No_reg
@@ -294,8 +314,8 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     jmp <= "01001100";
                   
                 when "01101100" => -- after while
-                    write_signal <= "1111"; -- no reg
-                    jmp <= "00000000";
+                    write_signal <= "0011"; -- C reg
+                    jmp <= "00000111";
                     A <= R_reg;
                     ALU_inst <= "0111"; 
                   msgout_valid <= '1';
@@ -303,8 +323,12 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                   
                 
                 when "10100001" =>
+                 write_signal <= "1111"; -- no reg
                     --done
-                    jmp <= "00000000";
+                    A <= C_reg;
+                    msgout_data <= C_reg;
+                    ALU_inst <= "0111"; 
+                    jmp <= "11111111";
                     msgout_valid <= '1';
                    
                   
