@@ -1,0 +1,1182 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:55:25 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Mon Oct 28 21:33:49 2019
+# Process ID: 8416
+# Current directory: C:/Users/student/Documents/RSA/RSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13056 C:\Users\student\Documents\RSA\RSA\RSA.xpr
+# Log file: C:/Users/student/Documents/RSA/RSA/vivado.log
+# Journal file: C:/Users/student/Documents/RSA/RSA\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/student/Documents/RSA/RSA/RSA.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Core_tb_behav -key {Behavioral:sim_1:Functional:Core_tb} -tclbatch {Core_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source Core_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1ms
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 840.102 ; gain = 0.000
+xsim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 840.102 ; gain = 16.355
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Core_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1ms
+launch_simulation: Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 840.102 ; gain = 22.801
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 872.887 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 872.887 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 872.887 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 873.027 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 873.027 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 873.027 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 876.582 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 876.582 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 876.582 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 876.582 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 876.582 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 876.582 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 876.582 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 876.582 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 876.582 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 882.703 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 882.703 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 882.703 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 886.398 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 886.398 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 886.398 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 887.102 ; gain = 0.703
+relaunch_xsim_kernel: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 887.102 ; gain = 0.703
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 887.102 ; gain = 0.703
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 909.891 ; gain = 3.133
+relaunch_xsim_kernel: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 909.891 ; gain = 3.133
+relaunch_sim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 909.891 ; gain = 3.133
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 910.547 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 910.547 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 910.547 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 923.730 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 937.664 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 937.664 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 937.664 ; gain = 0.000
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z010iclg225-1L
+Top: Core
+INFO: [Device 21-403] Loading part xc7z010iclg225-1L
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1359.656 ; gain = 171.074
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Core' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (1#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'Control' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+WARNING: [Synth 8-614] signal 'program_counter' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:85]
+WARNING: [Synth 8-614] signal 'c_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'redundant' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'ed_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'i_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'm_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T1_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'x1' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'a_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T2_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'j_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'k_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'R_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'b_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'n_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'blakley_2' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'jmp' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'Control' (2#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'Core' (3#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1404.609 ; gain = 216.027
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1404.609 ; gain = 216.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1404.609 ; gain = 216.027
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1532.289 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 1583.410 ; gain = 394.828
+10 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 1583.410 ; gain = 642.703
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1595.047 ; gain = 11.637
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Core' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (1#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'Control' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+WARNING: [Synth 8-614] signal 'program_counter' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:85]
+WARNING: [Synth 8-614] signal 'c_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'redundant' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'ed_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'i_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'm_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T1_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'x1' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'a_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T2_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'j_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'k_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'R_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'b_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'n_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'blakley_2' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'jmp' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'Control' (2#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'Core' (3#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1632.848 ; gain = 49.438
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1632.848 ; gain = 49.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1632.848 ; gain = 49.438
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1632.848 ; gain = 49.438
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1669.586 ; gain = 22.348
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Core' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (1#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'Control' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+WARNING: [Synth 8-614] signal 'program_counter' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:85]
+WARNING: [Synth 8-614] signal 'c_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'redundant' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'ed_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'i_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'm_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T1_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'x1' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'a_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T2_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'j_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'k_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'R_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'b_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'n_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'blakley_2' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'Control' (2#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'Core' (3#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1702.941 ; gain = 55.703
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1725.816 ; gain = 78.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1725.816 ; gain = 78.578
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1788.160 ; gain = 140.922
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1789.340 ; gain = 1.180
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Core' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (1#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'Control' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+WARNING: [Synth 8-614] signal 'program_counter' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:85]
+WARNING: [Synth 8-614] signal 'c_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'redundant' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'ed_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'i_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'm_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T1_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'x1' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'a_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T2_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'j_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'k_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'R_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'b_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'n_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'blakley_2' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'jmp' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'Control' (2#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'Core' (3#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1789.340 ; gain = 1.180
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1812.613 ; gain = 24.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1812.613 ; gain = 24.453
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1835.262 ; gain = 47.102
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1835.262 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Core' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (1#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'Control' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+WARNING: [Synth 8-614] signal 'program_counter' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:85]
+WARNING: [Synth 8-614] signal 'c_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'redundant' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'ed_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'i_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'm_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T1_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'x1' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'a_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T2_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'j_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'k_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'R_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'b_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'n_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'blakley_2' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'Control' (2#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'Core' (3#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1835.262 ; gain = 0.000
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1835.262 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1835.262 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1858.512 ; gain = 23.250
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1858.512 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1858.512 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1858.512 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1858.512 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1858.512 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1858.512 ; gain = 0.000
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1862.973 ; gain = 4.461
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Core' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (1#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'Control' [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+WARNING: [Synth 8-614] signal 'program_counter' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:85]
+WARNING: [Synth 8-614] signal 'c_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'redundant' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'ed_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'i_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'm_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T1_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'x1' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'a_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'T2_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'j_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'k_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'R_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'b_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'n_reg' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+WARNING: [Synth 8-614] signal 'blakley_2' is read in the process but is not in the sensitivity list [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'Control' (2#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'Core' (3#1) [C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd:76]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1862.973 ; gain = 4.461
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1869.832 ; gain = 11.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1869.832 ; gain = 11.320
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1939.129 ; gain = 80.621
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Core_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Core_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/student/Documents/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Core'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/student/Documents/RSA/RSA/RSA.sim/sim_1/behav/xsim'
+"xelab -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto b21dbe30756047ff945bb1036337d7a8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Core_tb_behav xil_defaultlib.Core_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
+Compiling architecture behavoir of entity xil_defaultlib.Core [core_default]
+Compiling architecture bench of entity xil_defaultlib.core_tb
+Built simulation snapshot Core_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2032.625 ; gain = 0.000
+relaunch_xsim_kernel: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2032.625 ; gain = 0.121
+relaunch_sim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2032.625 ; gain = 0.121
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/student/Documents/RSA/RSA/RSA.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Mon Oct 28 22:00:54 2019] Launched synth_1...
+Run output will be captured here: C:/Users/student/Documents/RSA/RSA/RSA.runs/synth_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 28 22:03:46 2019...

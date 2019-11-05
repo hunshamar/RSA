@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2019.1 (64-bit)
-# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Oct 28 13:29:21 2019
-# Process ID: 4208
-# Current directory: C:/Users/asgei/Desktop/RSA/RSA/RSA.runs/synth_1
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:55:25 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Mon Oct 28 22:00:56 2019
+# Process ID: 14108
+# Current directory: C:/Users/student/Documents/RSA/RSA/RSA.runs/synth_1
 # Command line: vivado.exe -log Core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Core.tcl
-# Log file: C:/Users/asgei/Desktop/RSA/RSA/RSA.runs/synth_1/Core.vds
-# Journal file: C:/Users/asgei/Desktop/RSA/RSA/RSA.runs/synth_1\vivado.jou
+# Log file: C:/Users/student/Documents/RSA/RSA/RSA.runs/synth_1/Core.vds
+# Journal file: C:/Users/student/Documents/RSA/RSA/RSA.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source Core.tcl -notrace

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/asgei/Desktop/RSA/RSA/RSA.runs/synth_1'
+HD_PWD='C:/Users/student/Documents/RSA/RSA/RSA.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

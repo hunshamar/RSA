@@ -2,64 +2,13 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun Oct 27 23:05:25 2019
-# Process ID: 6196
-# Current directory: C:/Users/asgei/Desktop/RSA/RSA
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16196 C:\Users\asgei\Desktop\RSA\RSA\RSA.xpr
-# Log file: C:/Users/asgei/Desktop/RSA/RSA/vivado.log
-# Journal file: C:/Users/asgei/Desktop/RSA/RSA\vivado.jou
+# Start of session at: Tue Nov  5 15:34:50 2019
+# Process ID: 3868
+# Current directory: C:/Users/asgei/Desktop/RSA_j/RSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3784 C:\Users\asgei\Desktop\RSA_j\RSA\RSA.xpr
+# Log file: C:/Users/asgei/Desktop/RSA_j/RSA/vivado.log
+# Journal file: C:/Users/asgei/Desktop/RSA_j/RSA\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/asgei/Desktop/RSA/RSA/RSA.xpr
+open_project C:/Users/asgei/Desktop/RSA_j/RSA/RSA.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-source Core_tb.tcl
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-run 1000 us
-relaunch_sim
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-reset_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
