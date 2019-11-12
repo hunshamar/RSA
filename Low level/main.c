@@ -81,11 +81,25 @@ void binary_method(){
     CMP_flag = ALU_execute_instruction(regs.i, regs.T1, comp_registers_A_B, NULL);
 
     while(!CMP_flag){
+        
+        
+        CMP_flag = ALU_execute_instruction(regs.ed, regs.i, return_bit_B_from_A, NULL);
+        ALU_execute_instruction(regs.C, 0, ret_A, &regs.a);
+            ALU_execute_instruction(regs.M, 0, ret_A, &regs.b);
+            blakelys_algorithm();
+
+            
         ALU_execute_instruction(regs.i, 0, decrement_A, &regs.i);
 
         ALU_execute_instruction(regs.C, 0, ret_A, &regs.a);
         ALU_execute_instruction(regs.C, 0, ret_A, &regs.b);
+
+
+
         blakelys_algorithm();
+
+
+
 
         CMP_flag = ALU_execute_instruction(regs.ed, regs.i, return_bit_B_from_A, NULL);
         if (CMP_flag){
