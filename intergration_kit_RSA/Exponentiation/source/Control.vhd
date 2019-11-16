@@ -42,9 +42,9 @@ entity Control is
            msgin_data : in STD_LOGIC_VECTOR (255 downto 0);
            msgin_valid : in STD_LOGIC;
            CMP_flag : in STD_LOGIC;
-           ALU_R : in STD_LOGIC_VECTOR (255 downto 0);
-           A : out STD_LOGIC_VECTOR (255 downto 0);
-           B : out STD_LOGIC_VECTOR (255 downto 0);
+           ALU_R : in STD_LOGIC_VECTOR (258 downto 0);
+           A : out STD_LOGIC_VECTOR (258 downto 0);
+           B : out STD_LOGIC_VECTOR (258 downto 0);
            msgout_valid : out STD_LOGIC;
            msgout_data : out STD_LOGIC_VECTOR (255 downto 0);
            ALU_inst : out STD_LOGIC_VECTOR (3 downto 0);
@@ -59,29 +59,30 @@ end Control;
 architecture Behavioral of Control is
 
 --registers
-signal ed_reg : std_logic_vector(255 downto 0);
-signal n_reg : std_logic_vector(255 downto 0);
-signal m_reg : std_logic_vector(255 downto 0);
-signal c_reg : std_logic_vector(255 downto 0);
-signal a_reg : std_logic_vector(255 downto 0);
-signal b_reg : std_logic_vector(255 downto 0);
-signal R_reg : std_logic_vector(255 downto 0);
-signal i_reg : std_logic_vector(255 downto 0);
-signal j_reg : std_logic_vector(255 downto 0);
-signal k_reg : std_logic_vector(255 downto 0);
-signal T1_reg : std_logic_vector(255 downto 0);
-signal T2_reg : std_logic_vector(255 downto 0);
+signal ed_reg : std_logic_vector(258 downto 0);
+signal n_reg : std_logic_vector(258 downto 0);
+signal m_reg : std_logic_vector(258 downto 0);
+signal c_reg : std_logic_vector(258 downto 0);
+signal a_reg : std_logic_vector(258 downto 0);
+signal b_reg : std_logic_vector(258 downto 0);
+signal R_reg : std_logic_vector(258 downto 0);
+signal i_reg : std_logic_vector(258 downto 0);
+signal j_reg : std_logic_vector(258 downto 0);
+signal k_reg : std_logic_vector(258 downto 0);
+signal T1_reg : std_logic_vector(258 downto 0);
+signal T2_reg : std_logic_vector(258 downto 0);
 --signal ALU_R_reg  : std_logic_vector(255 downto 0); no signals with initial values use reset to initialize
 signal write_signal : std_logic_vector(3 downto 0);
 signal program_counter : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
 signal jmp : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
 signal blakley_2 : std_logic := '0';
+signal blakley_2_next : std_logic;
 signal msgout_valid_next : std_logic := '0';
 signal ready_in_next : std_logic := '1';
 
-constant redundant : STD_LOGIC_VECTOR (255 downto 0) := (others => '0');
-constant x1 : STD_LOGIC_VECTOR (247 downto 0) := (others => '0');
-constant x2 : STD_LOGIC_VECTOR (239 downto 0) := (others => '0');
+constant redundant : STD_LOGIC_VECTOR (258 downto 0) := (others => '0');
+--constant x1 : STD_LOGIC_VECTOR (247 downto 0) := (others => '0');
+--constant x2 : STD_LOGIC_VECTOR (239 downto 0) := (others => '0');
 
 begin
 
@@ -99,6 +100,7 @@ begin
         elsif (clk'event and clk = '1' ) then
             msgout_valid <= msgout_valid_next;
             ready_in <= ready_in_next;
+            blakley_2 <= blakley_2_next;
             --CLK_flag <= '1';
             if (jmp = "00000000") then 
                 program_counter <= program_counter+1;
@@ -140,10 +142,10 @@ end process;
     
 process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter, ready_in)
     begin
-           ed_reg <= key_ed;
-           n_Reg <= key_n;
-           m_reg <= msgin_data;
-           msgout_data  <= C_reg;
+           ed_reg <= "000" & key_ed;
+           n_Reg <= "000" & key_n;
+           m_reg <= "000" & msgin_data;
+           msgout_data  <= C_reg(255 downto 0);
            
             
         
@@ -230,7 +232,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     B <= redundant;
                     write_signal <= "1111";
                     ALU_inst <= "1111";
-                   blakley_2 <= '0';
+                   --blakley_2 <= '0';
                    jmp <= "00000000";
                    ready_in_next <= '0';
                    
@@ -296,7 +298,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     write_signal <= "1111";
                     
                     jmp <= "00000000";
-                    blakley_2 <= '1';
+                    --blakley_2 <= '1';
                     --msgout_data <= x1 & "11111110";
                     ready_in_next <= '0';
                     
@@ -314,7 +316,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                         --msgout_data <=  i_Reg;
                     else 
                         jmp <= "00000111"; --dont do blakley 2       
-                        msgout_data <=  x1 & "00000000";         
+                        --msgout_data <=  x1 & "00000000";         
                     end if;
                     ready_in_next <= '0';
                     
@@ -521,6 +523,15 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
             msgout_valid_next <= '0';
             --ready_in_next <= '0';
         end if;
+        
+        if program_counter = "00000111" then
+            blakley_2_next <= '0';
+        elsif program_counter = "10000110" then
+            blakley_2_next <= '1';
+        else
+            blakley_2_next <= blakley_2;
+        end if;
+        
     end process;
     
 --    process (program_counter)

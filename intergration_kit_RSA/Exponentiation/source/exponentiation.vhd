@@ -36,10 +36,10 @@ entity exponentiation is
 end exponentiation;
 
 architecture behavior of exponentiation is
-    signal temp_A : STD_LOGIC_VECTOR (255 downto 0);
-    signal temp_B : STD_LOGIC_VECTOR (255 downto 0);
+    signal temp_A : STD_LOGIC_VECTOR (258 downto 0);
+    signal temp_B : STD_LOGIC_VECTOR (258 downto 0);
     signal ALU_select_instr_temp : STD_LOGIC_VECTOR (3 downto 0);
-    signal temp_ALU_output : STD_LOGIC_VECTOR (255 downto 0);
+    signal temp_ALU_output : STD_LOGIC_VECTOR (258 downto 0);
     signal temp_CMP_flag : STD_LOGIC;
 begin
 i_ALU : entity work.ALU

@@ -14,10 +14,10 @@ use ieee.NUMERIC_STD.all;
 
 entity ALU is
     Port ( 
-           A : in STD_LOGIC_VECTOR (255 downto 0);
-           B : in STD_LOGIC_VECTOR (255 downto 0);
+           A : in STD_LOGIC_VECTOR (258 downto 0);
+           B : in STD_LOGIC_VECTOR (258 downto 0);
            ALU_select_instr : in STD_LOGIC_VECTOR (3 downto 0);
-           ALU_output: out STD_LOGIC_VECTOR (255 downto 0);
+           ALU_output: out STD_LOGIC_VECTOR (258 downto 0);
            
            
            CMP_FLAG : out STD_LOGIC);
@@ -42,12 +42,12 @@ begin
                 ALU_output <= A;
             end if;        
         when "0001" => -- left shift A
-            OVERFLOW_FLAG <= '1'; 
+            --OVERFLOW_FLAG <= '1'; 
             CMP_flag <= '0'; 
-           OVERFLOW <=  ('0' & std_logic_vector(unsigned(A) sll 1)); 
+           --OVERFLOW <=  ('0' & std_logic_vector(unsigned(A) sll 1)); 
             ALU_output <= std_logic_vector(unsigned(A) sll 1); 
         when "0010" => -- left shift A and add B
-            OVERFLOW_FLAG <= '1'; 
+            --OVERFLOW_FLAG <= '1'; 
             CMP_flag <= '1'; 
             --OVERFLOW <=  '0' & std_logic_vector(unsigned(A) sll 1) + '0' & B;  
             ALU_output <= std_logic_vector(unsigned(A) sll 1) + B;  

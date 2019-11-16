@@ -1,7 +1,0 @@
-Running: xsim.dir/RSA_accelerator_tb_behav/xsimk.exe -simmode gui -wdb RSA_accelerator_tb_behav.wdb -simrunnum 0 -socket 52672
-Design successfully loaded
-Design Loading Memory Usage: 5588 KB (Peak: 5588 KB)
-Design Loading CPU Usage: 31 ms
-Simulation completed
-Simulation Memory Usage: 14380 KB (Peak: 14380 KB)
-Simulation CPU Usage: 1905 ms

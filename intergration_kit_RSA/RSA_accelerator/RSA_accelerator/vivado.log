@@ -2,108 +2,23 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sat Nov 16 12:03:58 2019
-# Process ID: 7280
-# Current directory: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4988 C:\Users\asgei\Desktop\13.11\intergration_kit_RSA\RSA_accelerator\RSA_accelerator\RSA_accelerator.xpr
-# Log file: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/vivado.log
-# Journal file: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator\vivado.jou
+# Start of session at: Sat Nov 16 12:13:04 2019
+# Process ID: 8916
+# Current directory: C:/Users/asgei/Desktop/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9684 C:\Users\asgei\Desktop\RSA\intergration_kit_RSA\RSA_accelerator\RSA_accelerator\RSA_accelerator.xpr
+# Log file: C:/Users/asgei/Desktop/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/vivado.log
+# Journal file: C:/Users/asgei/Desktop/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.xpr
-INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
-Current project path is 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator'
+open_project C:/Users/asgei/Desktop/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator' since last save.
 Scanning sources...
 Finished scanning sources
 WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/asgei/Desktop/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/IP'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/asgei/Desktop/RSA/intergration_kit_RSA/RSA_accelerator/IP'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 670.645 ; gain = 52.438
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:05 . Memory (MB): peak = 715.168 ; gain = 53.477
 update_compile_order -fileset sources_1
 launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'RSA_accelerator_tb' in fileset 'sim_1'...
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.inp_messages.hex_ct3_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.inp_messages.hex_ct4_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.inp_messages.hex_ct5_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.inp_messages.hex_pt0_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.inp_messages.hex_pt1_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.inp_messages.hex_pt2_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.otp_messages.hex_ct0_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.otp_messages.hex_ct1_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.otp_messages.hex_ct2_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.otp_messages.hex_pt3_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.otp_messages.hex_pt4_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/long_test.otp_messages.hex_pt5_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.inp_messages.hex_ct3_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.inp_messages.hex_ct4_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.inp_messages.hex_ct5_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.inp_messages.hex_pt0_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.inp_messages.hex_pt1_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.inp_messages.hex_pt2_in.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.otp_messages.hex_ct0_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.otp_messages.hex_ct1_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.otp_messages.hex_ct2_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.otp_messages.hex_pt3_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.otp_messages.hex_pt4_out.txt'
-INFO: [SIM-utils-43] Exported 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim/short_test.otp_messages.hex_pt5_out.txt'
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim'
-"xvhdl --incr --relax -prj RSA_accelerator_tb_vhdl.prj"
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim'
-"xelab -wto 6f4be0f2e704474a995cb9cb454a9875 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot RSA_accelerator_tb_behav xil_defaultlib.RSA_accelerator_tb -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 6f4be0f2e704474a995cb9cb454a9875 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot RSA_accelerator_tb_behav xil_defaultlib.RSA_accelerator_tb -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "RSA_accelerator_tb_behav -key {Behavioral:sim_1:Functional:RSA_accelerator_tb} -tclbatch {RSA_accelerator_tb.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source RSA_accelerator_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-WARNING: Simulation object /rsa_accelerator_tb/tc_inp was not traceable in the design for the following reason:
-Vivado Simulator does not yet support tracing of VHDL variables.
-WARNING: Simulation object /rsa_accelerator_tb/tc_otp was not traceable in the design for the following reason:
-Vivado Simulator does not yet support tracing of VHDL variables.
-# run 1000ns
-Note: ********************************************************************************
-Time: 24 ns  Iteration: 1  Process: /rsa_accelerator_tb/testcase_control  File: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/testbench/rsa_accelerator_tb.vhd
-Note: STARTING NEW TESTCASE
-Time: 24 ns  Iteration: 1  Process: /rsa_accelerator_tb/testcase_control  File: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/testbench/rsa_accelerator_tb.vhd
-Note: ********************************************************************************
-Time: 24 ns  Iteration: 1  Process: /rsa_accelerator_tb/testcase_control  File: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/testbench/rsa_accelerator_tb.vhd
-Note: DRIVE NEW MSGIN_DATA[0000] RTL: 0A23232323232323232323232323232323232323232323232323232323232323
-Time: 48 ns  Iteration: 1  Process: /rsa_accelerator_tb/msgin_bfm  File: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/testbench/rsa_accelerator_tb.vhd
-Note: DRIVE NEW MSGIN_DATA[0001] RTL: 0A232020207478742E6E695F307470203A2020202020202020202020454D414E
-Time: 60 ns  Iteration: 1  Process: /rsa_accelerator_tb/msgin_bfm  File: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/testbench/rsa_accelerator_tb.vhd
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'RSA_accelerator_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 727.840 ; gain = 32.313
-run 6 ms
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 769.789 ; gain = 0.000
-exit
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 16 12:09:19 2019...
+INFO: [Vivado 12-5682] Launching behavioral simulation 
