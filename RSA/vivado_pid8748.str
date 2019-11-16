@@ -326,3 +326,4 @@ selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResour
 // TclEventType: WAVEFORM_UPDATE_WAVEFORM
 maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (aH, cl)
 // WARNING: HTimer (StateMonitor Timer) is taking 604ms to process. Increasing delay to 4000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 790 MB. GUI used memory: 64 MB. Current time: 11/16/19, 12:54:40 PM CET

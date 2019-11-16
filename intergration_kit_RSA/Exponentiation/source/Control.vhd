@@ -140,7 +140,7 @@ begin
   
 end process;
     
-process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter, ready_in)
+process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter, ready_in, ready_out)
     begin
            ed_reg <= "000" & key_ed;
            n_Reg <= "000" & key_n;
@@ -484,7 +484,11 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     B <= redundant;
                     ALU_inst <= "0111"; 
                     jmp <= "10100001";
-                    ready_in_next <= '1';
+                    if (ready_out='1' and msgout_valid='1') then
+                        ready_in_next <= '1';
+                    else
+                        ready_in_next <= '0';
+                    end if;
                    
                   
                 when others => 

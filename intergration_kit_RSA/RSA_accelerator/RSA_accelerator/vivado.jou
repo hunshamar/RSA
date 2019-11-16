@@ -31,3 +31,12 @@ launch_simulation
 source RSA_accelerator_tb.tcl
 run 6 ms
 run 6 ms
+relaunch_sim
+run 6 ms
+run 6 ms
+synth_design -rtl -name rtl_1
+relaunch_sim
+run 6 ms
+relaunch_sim
+run 7 ms
+refresh_design
