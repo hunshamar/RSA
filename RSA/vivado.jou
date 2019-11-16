@@ -14,3 +14,4 @@ open_project C:/Users/asgei/Desktop/RSA/RSA/RSA.xpr
 update_compile_order -fileset sources_1
 launch_simulation
 source Core_tb.tcl
+close_sim

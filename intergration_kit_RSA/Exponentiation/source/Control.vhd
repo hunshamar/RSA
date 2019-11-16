@@ -50,8 +50,7 @@ entity Control is
            ALU_inst : out STD_LOGIC_VECTOR (3 downto 0);
            ready_in : out STD_LOGIC;
            ready_out : in STD_LOGIC);
-           --program_c_r : out STD_LOGIC_VECTOR (7 downto 0);
-           --ALU_R_r     : out STD_LOGIC_VECTOR (255 downto 0));
+
 end Control;
 
 
@@ -75,10 +74,10 @@ signal T2_reg : std_logic_vector(258 downto 0);
 signal write_signal : std_logic_vector(3 downto 0);
 signal program_counter : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
 signal jmp : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
-signal blakley_2 : std_logic := '0';
+signal blakley_2 : std_logic;
 signal blakley_2_next : std_logic;
-signal msgout_valid_next : std_logic := '0';
-signal ready_in_next : std_logic := '1';
+signal msgout_valid_next : std_logic;
+signal ready_in_next : std_logic;
 
 constant redundant : STD_LOGIC_VECTOR (258 downto 0) := (others => '0');
 --constant x1 : STD_LOGIC_VECTOR (247 downto 0) := (others => '0');
@@ -162,21 +161,10 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
            ALU_inst <= "1111";
            
         else
---        elsif (ready_in = '0') then
---           write_signal <= "1111";
---           A <= redundant;
---           B <= redundant;
---           ALU_inst <= "1111";
---           jmp <= "00000000";
-        
+--       
             case program_counter is
             
---                when "00000011" => --blakely
---                  --n_reg <= x1 & "00000100";    
---                  --msgout_valid <= '1';
---                  write_signal <= "0111"; -- No_reg
---                  --A <= a_reg;
---                  ALU_inst <= "1010"; 
+--               
                   
                  when "00000001" =>
                     -- mean msgin not ready and valid
@@ -188,7 +176,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     ALU_inst <= "1111";
                   
                  when "00000011" =>
-                    -- ready_in <= '0'; -- i guess
+                    
                     jmp <= "00000000";
                     A <= redundant;
                     B <= redundant;
@@ -232,7 +220,6 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     B <= redundant;
                     write_signal <= "1111";
                     ALU_inst <= "1111";
-                   --blakley_2 <= '0';
                    jmp <= "00000000";
                    ready_in_next <= '0';
                    
@@ -298,13 +285,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     write_signal <= "1111";
                     
                     jmp <= "00000000";
-                    --blakley_2 <= '1';
-                    --msgout_data <= x1 & "11111110";
                     ready_in_next <= '0';
-                    
---                when "10000111" => 
---                    --jmp <= "01101100";
---                    msgout_data <= x1 & "00000000";
                     
                 when "10000111" => --blakley check
                     A <= ed_reg;
@@ -313,16 +294,13 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     write_signal <= "1111"; --no write
                     if CMP_flag = '1' then
                         jmp <= "00000000"; --continue
-                        --msgout_data <=  i_Reg;
                     else 
                         jmp <= "00000111"; --dont do blakley 2       
-                        --msgout_data <=  x1 & "00000000";         
                     end if;
                     ready_in_next <= '0';
                     
                when "10001000" =>
                     jmp <= "00000000";
-                   -- msgout_data <= x1 & "00000000";
                     write_signal <= "0100"; --a_reg
                     A <= C_reg;
                     B <= redundant;
@@ -339,8 +317,6 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
 
                 when "01000110" => --blakely 
                   jmp <= "00000000";
-                  --n_reg <= x1 & "00000100";    
-                  --msgout_valid <= '1';
                   write_signal <= "1111"; -- No_reg
                   A <= a_reg;
                   B <= redundant;
@@ -351,7 +327,6 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                          
                 when "01000111" =>
                     jmp <= "00000000";
-                --msgout_valid <= '0';
                     A <= redundant;
                     B <= redundant;
                   ALU_inst <= "1000"; --return 0
@@ -432,7 +407,6 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     
                 when "01010000" => 
                     jmp <= "00000000";
-                    --msgout_valid <= '0';
                     A <= R_Reg;
                     B <= n_reg;
                     ALU_inst <= "0000";
@@ -472,7 +446,6 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     A <= R_reg;
                     B <= redundant;
                     ALU_inst <= "0111"; 
-                    --msgout_valid <= '1';
                     ready_in_next <= '0';
                   
                   
@@ -493,23 +466,13 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                   
                 when others => 
                     jmp <= "00000000"; --jmp;
-                    --jmp <= "00000000";  --wtfff
                     write_signal <= "1111";
                     A <= redundant;
                     B <= redundant;
                     ALU_inst <= "1111";
                     ready_in_next <= '0';
---                msgout_data <= (others => '1');
---                msgout_valid <= '1';
-                    -- nothing
             end case;
---         else
---           write_signal <= "1111";
---           A <= redundant;
---           B <= redundant;
---           ALU_inst <= "1111";
---           jmp <= "00000000";
-         end if;--ready_in='0'        
+         end if;       
                     
             -- do nothing
      
@@ -522,13 +485,11 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
     begin
         if program_counter = "10100001" then
             msgout_valid_next <= '1';
-            --ready_in_next <= '1';
         else
             msgout_valid_next <= '0';
-            --ready_in_next <= '0';
         end if;
         
-        if program_counter = "00000111" then
+        if program_counter = "00000111" or program_counter = "00000001" then
             blakley_2_next <= '0';
         elsif program_counter = "10000110" then
             blakley_2_next <= '1';
@@ -538,14 +499,5 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
         
     end process;
     
---    process (program_counter)
---    begin
---        if program_counter = "10000110" 
---        or program_counter = "10000111" then
---            msgout_valid_next <= '1';
---        else
---            jmp_next <= "00000000";
---        end if;
---    end process;
 
 end Behavioral;
