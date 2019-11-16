@@ -1,0 +1,68 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Nov 13 10:17:41 2019
+# Process ID: 9004
+# Current directory: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11548 C:\Users\asgei\Desktop\13.11\intergration_kit_RSA\RSA_accelerator\RSA_accelerator\RSA_accelerator.xpr
+# Log file: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/vivado.log
+# Journal file: C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/asgei/Desktop/13.11/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source RSA_accelerator_tb.tcl
+run 1000 us
+run 20 ms
+current_wave_config {Untitled 1}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/program_counter}} 
+relaunch_sim
+run 20 ms
+close_sim
+launch_simulation
+source RSA_accelerator_tb.tcl
+current_wave_config {Untitled 2}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/ALU_R}} 
+current_wave_config {Untitled 2}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/A}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/B}} 
+current_wave_config {Untitled 2}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/CMP_flag}} 
+current_wave_config {Untitled 2}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/ALU_inst}} 
+current_wave_config {Untitled 2}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/ed_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/n_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/m_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/c_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/a_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/b_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/R_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/i_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/j_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/k_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/T1_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/T2_reg}} {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/write_signal}} 
+current_wave_config {Untitled 2}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/blakley_2}} 
+current_wave_config {Untitled 2}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/jmp}} 
+current_wave_config {Untitled 2}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/program_counter}} 
+relaunch_sim
+run 20 ms
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_ALU/OVERFLOW_FLAG}} 
+current_wave_config {Untitled 2}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_ALU/OVERFLOW}} 
+relaunch_sim
+run 20 ms
+run 20 ms
+run 20 ms
+run 20 ms
+run 20 ms
+run 20 ms
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 20 ms
+run 20 ms
+run 20 ms
+relaunch_sim
+run 20 ms
+run 20 ms
+relaunch_sim
+run 20 ms

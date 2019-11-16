@@ -1,8 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ALU'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Control.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'Control'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sources_1/new/Core.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'Core'
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/asgei/Desktop/RSA/RSA/RSA.srcs/sim_1/new/core_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'Core_tb'
