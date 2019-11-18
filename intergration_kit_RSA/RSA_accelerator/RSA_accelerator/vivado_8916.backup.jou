@@ -1,0 +1,64 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Nov 16 12:13:04 2019
+# Process ID: 8916
+# Current directory: C:/Users/asgei/Desktop/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9684 C:\Users\asgei\Desktop\RSA\intergration_kit_RSA\RSA_accelerator\RSA_accelerator\RSA_accelerator.xpr
+# Log file: C:/Users/asgei/Desktop/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/vivado.log
+# Journal file: C:/Users/asgei/Desktop/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/asgei/Desktop/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+launch_simulation
+source RSA_accelerator_tb.tcl
+run 6 ms
+run 6 ms
+run 6 ms
+run 6 ms
+run 6 ms
+run 6 ms
+run 6 ms
+close_sim
+launch_simulation
+source RSA_accelerator_tb.tcl
+close_sim
+launch_simulation
+source RSA_accelerator_tb.tcl
+run 6 ms
+run 6 ms
+relaunch_sim
+run 6 ms
+run 6 ms
+synth_design -rtl -name rtl_1
+relaunch_sim
+run 6 ms
+relaunch_sim
+run 7 ms
+refresh_design
+relaunch_sim
+run 7 ms
+relaunch_sim
+run 7 ms
+run 7 ms
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+relaunch_sim
+run 7 ms
+relaunch_sim
+run 7 ms
+run 7 ms
+run 7 ms
+relaunch_sim
+run 7 ms
+run 7 ms
+relaunch_sim
+run 2 ms
+run all
+current_design rtl_1
+close_sim

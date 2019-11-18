@@ -50,23 +50,22 @@ extern void execute_38(char*, char *);
 extern void execute_39(char*, char *);
 extern void execute_40(char*, char *);
 extern void execute_78(char*, char *);
-extern void execute_79(char*, char *);
 extern void execute_73(char*, char *);
 extern void execute_75(char*, char *);
 extern void execute_76(char*, char *);
 extern void execute_77(char*, char *);
 extern void transaction_0(char*, char*, unsigned, unsigned, unsigned);
 extern void vhdl_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-funcp funcTab[13] = {(funcp)execute_36, (funcp)execute_37, (funcp)execute_38, (funcp)execute_39, (funcp)execute_40, (funcp)execute_78, (funcp)execute_79, (funcp)execute_73, (funcp)execute_75, (funcp)execute_76, (funcp)execute_77, (funcp)transaction_0, (funcp)vhdl_transfunc_eventcallback};
-const int NumRelocateId= 13;
+funcp funcTab[12] = {(funcp)execute_36, (funcp)execute_37, (funcp)execute_38, (funcp)execute_39, (funcp)execute_40, (funcp)execute_78, (funcp)execute_73, (funcp)execute_75, (funcp)execute_76, (funcp)execute_77, (funcp)transaction_0, (funcp)vhdl_transfunc_eventcallback};
+const int NumRelocateId= 12;
 
 void relocate(char *dp)
 {
-	iki_relocate(dp, "xsim.dir/RSA_accelerator_tb_behav/xsim.reloc",  (void **)funcTab, 13);
-	iki_vhdl_file_variable_register(dp + 17168);
-	iki_vhdl_file_variable_register(dp + 17224);
-	iki_vhdl_file_variable_register(dp + 20864);
-	iki_vhdl_file_variable_register(dp + 20904);
+	iki_relocate(dp, "xsim.dir/RSA_accelerator_tb_behav/xsim.reloc",  (void **)funcTab, 12);
+	iki_vhdl_file_variable_register(dp + 17384);
+	iki_vhdl_file_variable_register(dp + 17440);
+	iki_vhdl_file_variable_register(dp + 21080);
+	iki_vhdl_file_variable_register(dp + 21120);
 
 
 	/*Populate the transaction function pointer field in the whole net structure */

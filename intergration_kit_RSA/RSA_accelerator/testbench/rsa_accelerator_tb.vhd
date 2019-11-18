@@ -275,7 +275,7 @@ architecture struct of rsa_accelerator_tb is
 
 		-- Encryption key selected
 		if(command='1')then
-			ked <= d;
+			ked <= e;
 		-- Decryption key selected
 		else
 			ked <= d; 

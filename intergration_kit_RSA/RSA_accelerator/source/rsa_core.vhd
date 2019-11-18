@@ -79,12 +79,14 @@ begin
 			ready_in  => msgin_ready ,
 			ready_out => msgout_ready,
 			valid_out => msgout_valid,
+			msgout_last => msgout_last,
+			msgin_last => msgin_last,
 			result    => msgout_data ,
 			modulus   => key_n       ,
 			clk       => clk         ,
 			reset_n   => reset_n
 		);
 
-	msgout_last  <= msgin_last;
+	--msgout_last  <= msgin_last;
 	rsa_status   <= (others => '0');
 end rtl;

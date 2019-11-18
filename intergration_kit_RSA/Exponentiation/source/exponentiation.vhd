@@ -26,7 +26,11 @@ entity exponentiation is
 
 		--utility
 		clk 		: in STD_LOGIC;
-		reset_n 	: in STD_LOGIC
+		reset_n 	: in STD_LOGIC;
+		
+		
+           msgin_last : in STD_LOGIC;
+           msgout_last : out STD_LOGIC
 		
 --		--reduncies 
 --        CLK_flag : out STD_LOGIC;
@@ -64,6 +68,8 @@ i_CTRL : entity work.Control
         CMP_flag => temp_CMP_flag,
         ALU_R => temp_ALU_output,
         --CLK_flag => CLK_flag,
+        msgin_last => msgin_last,
+        msgout_last => msgout_last,
         A => temp_A,
         B  => temp_B,
         msgout_valid => valid_out,

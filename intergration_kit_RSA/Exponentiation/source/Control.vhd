@@ -46,6 +46,8 @@ entity Control is
            A : out STD_LOGIC_VECTOR (258 downto 0);
            B : out STD_LOGIC_VECTOR (258 downto 0);
            msgout_valid : out STD_LOGIC;
+           msgin_last : in STD_LOGIC;
+           msgout_last : out STD_LOGIC;
            msgout_data : out STD_LOGIC_VECTOR (255 downto 0);
            ALU_inst : out STD_LOGIC_VECTOR (3 downto 0);
            ready_in : out STD_LOGIC;
@@ -75,6 +77,7 @@ signal write_signal : std_logic_vector(3 downto 0);
 signal program_counter : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
 signal jmp : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
 signal blakley_2 : std_logic;
+signal is_last_message : std_logic;
 signal blakley_2_next : std_logic;
 signal msgout_valid_next : std_logic;
 signal ready_in_next : std_logic;
@@ -106,6 +109,8 @@ begin
             else 
                 program_counter <= jmp;            
             end if;
+            
+            
                 
             --program_c_r <= program_counter;
             --ALU_R_r <= ALU_R;
@@ -141,27 +146,37 @@ end process;
     
 process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter, ready_in, ready_out)
     begin
-           ed_reg <= "000" & key_ed;
-           n_Reg <= "000" & key_n;
-           m_reg <= "000" & msgin_data;
-           msgout_data  <= C_reg(255 downto 0);
+          
            
+--            if (ready_in = '1' AND msgin_valid = '1') then
+--                ed_reg <= "000" & key_ed;
+--                    n_Reg <= "000" & key_n;
+--                    m_reg <= "000" & msgin_data;
+                    
+                    
+--                   write_signal <= "1111";
+--                    A <= redundant;
+--                    B <= redundant;
+--                    ALU_inst <= "1111";
+--                    jmp <= "00000000";
+--                    ready_in <= '0';
+--            end if;
             
         
     
     --msgout_data <= (others => '1');
-        if (msgin_valid = '1' AND ready_in = '1') then
+--        if (msgin_valid = '1' AND ready_in = '1') then
 
-           ready_in_next <= '0';
-           jmp <= "00000010";
+--           ready_in_next <= '0';
+--           jmp <= "00000010";
             
-           write_signal <= "1111";
-           A <= redundant;
-           B <= redundant;
-           ALU_inst <= "1111";
+--           write_signal <= "1111";
+--           A <= redundant;
+--           B <= redundant;
+--           ALU_inst <= "1111";
            
-        else
---       
+--        else
+       msgout_data  <= C_reg(255 downto 0);
             case program_counter is
             
 --               
@@ -172,8 +187,20 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     write_signal <= "1111";
                     A <= redundant;
                     B <= redundant;
-                    ready_in_next <= '1';
                     ALU_inst <= "1111";
+                    if (msgin_valid = '1') then
+                        jmp <= "00000011";
+                        ready_in_next <= '1';
+                     
+                        
+                    else
+                        
+                        jmp <= "00000001";
+                        ready_in_next <= '0';
+                    end if;
+                    
+                --when "00000010" =>
+                        
                   
                  when "00000011" =>
                     
@@ -182,7 +209,10 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     B <= redundant;
                     write_signal <= "0111";
                     ready_in_next <= '0'; 
-                    ALU_inst <= "1010"; --ret 255;
+                    ALU_inst <= "1010"; --ret 255; ed_reg <= "000" & key_ed;
+                        n_Reg <= "000" & key_n;
+                        m_reg <= "000" & msgin_data;
+                ed_reg <= "000" & key_ed;
                     
                 
                 when "00000100" =>
@@ -456,7 +486,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     A <= C_reg;
                     B <= redundant;
                     ALU_inst <= "0111"; 
-                    jmp <= "10100001";
+                    jmp <= "00000001";
                     if (ready_out='1' and msgout_valid='1') then
                         ready_in_next <= '1';
                     else
@@ -472,7 +502,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     ALU_inst <= "1111";
                     ready_in_next <= '0';
             end case;
-         end if;       
+--         end if;       
                     
             -- do nothing
      
@@ -481,11 +511,18 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
     
     
     
-    process (program_counter)
+    process (program_counter, msgin_last)
     begin
+        if program_counter = "00000001" then 
+            is_last_message <= msgin_last;
+        end if; 
+    
         if program_counter = "10100001" then
+            -- set message out last to high if final message
+            msgout_last <= is_last_message;
             msgout_valid_next <= '1';
         else
+            msgout_last <= '0';
             msgout_valid_next <= '0';
         end if;
         
