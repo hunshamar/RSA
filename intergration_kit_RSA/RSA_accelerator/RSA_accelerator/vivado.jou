@@ -11,3 +11,30 @@
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/asgei/Desktop/manuals/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/asgei/Desktop/manuals/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator_tb_behav.wcfg
+source RSA_accelerator_tb.tcl
+run 200 ms
+relaunch_sim
+run 100 ms
+relaunch_sim
+run 20 ms
+relaunch_sim
+run 20 ms
+current_wave_config {RSA_accelerator_tb_behav.wcfg}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/ready_out}} 
+current_wave_config {RSA_accelerator_tb_behav.wcfg}
+add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/jmp}} 
+relaunch_sim
+run 20 ms
+relaunch_sim
+run 20 ms
+relaunch_sim
+run 20 ms
+run 200 ms
+relaunch_sim
+run 10 ms
+relaunch_sim
+run 10 ms
+relaunch_sim

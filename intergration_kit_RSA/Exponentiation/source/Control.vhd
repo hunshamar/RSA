@@ -113,6 +113,9 @@ begin
             end if;
             
             
+            
+            
+            
                 
             --program_c_r <= program_counter;
             --ALU_R_r <= ALU_R;
@@ -487,13 +490,20 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     --done
                     A <= C_reg;
                     B <= redundant;
-                    jmp <= "00000000";
+                    
+--                    if (ready_out <= 1)
+--                    jmp <= "00000000";
+                    
+                    
+                    
                     ALU_inst <= "0111"; 
-                    if (ready_out='1' and msgout_valid='1') then -- stop running 
-                        ready_in_next <= '1';
+                    if (msgout_valid='1' AND ready_out = '1') then -- stop running 
+                        --ready_in_next <= '1';
+                        jmp <= "00000000";
                         
                     else
-                        ready_in_next <= '0';
+                        jmp <= "10100001";
+                        --ready_in_next <= '0';
                         
                     end if;
                     
@@ -539,6 +549,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
         if program_counter = "10100001" then
             -- set message out last to high if final message
             msgout_last_next <= is_last_message;
+            --msgout_valid <= '1';
             msgout_valid_next <= '1';
         else
             msgout_last_next <= '0';
