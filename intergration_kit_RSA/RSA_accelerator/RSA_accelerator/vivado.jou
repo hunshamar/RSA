@@ -38,3 +38,13 @@ run 10 ms
 relaunch_sim
 run 10 ms
 relaunch_sim
+run 10 ms
+relaunch_sim
+run 10 ms
+relaunch_sim
+run 10 ms
+run 30 ms
+relaunch_sim
+run 30 ms
+run 100 ms
+close_sim

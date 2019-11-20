@@ -497,12 +497,12 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     
                     
                     ALU_inst <= "0111"; 
-                    if (msgout_valid='1' AND ready_out = '1') then -- stop running 
+                    if (msgout_valid = '1' AND ready_out = '1') then -- stop running 
                         --ready_in_next <= '1';
-                        jmp <= "00000000";
+                        jmp <= "10100001";
                         
                     else
-                        jmp <= "10100001";
+                        jmp <= "00000000";
                         --ready_in_next <= '0';
                         
                     end if;
@@ -546,7 +546,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
             is_last_message <= msgin_last;
         end if; 
     
-        if program_counter = "10100001" then
+        if program_counter = "10100001" and ready_out = '1' then
             -- set message out last to high if final message
             msgout_last_next <= is_last_message;
             --msgout_valid <= '1';
