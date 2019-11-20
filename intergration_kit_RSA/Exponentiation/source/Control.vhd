@@ -80,6 +80,7 @@ signal blakley_2 : std_logic;
 signal is_last_message : std_logic;
 signal blakley_2_next : std_logic;
 signal msgout_valid_next : std_logic;
+signal msgout_last_next : std_logic;
 signal ready_in_next : std_logic;
 
 constant redundant : STD_LOGIC_VECTOR (258 downto 0) := (others => '0');
@@ -101,6 +102,7 @@ begin
             --ALU_output <= (others => '0');
         elsif (clk'event and clk = '1' ) then
             msgout_valid <= msgout_valid_next;
+            msgout_last <= msgout_last_next;
             ready_in <= ready_in_next;
             blakley_2 <= blakley_2_next;
             --CLK_flag <= '1';
@@ -485,12 +487,29 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     --done
                     A <= C_reg;
                     B <= redundant;
+                    jmp <= "00000000";
                     ALU_inst <= "0111"; 
-                    jmp <= "00000001";
-                    if (ready_out='1' and msgout_valid='1') then
+                    if (ready_out='1' and msgout_valid='1') then -- stop running 
                         ready_in_next <= '1';
+                        
                     else
                         ready_in_next <= '0';
+                        
+                    end if;
+                    
+                when "10100010" =>
+                    write_signal <= "1111"; -- no reg
+                    --done
+                    A <= redundant;
+                    B <= redundant;
+                    jmp <= "00000000";
+                    ALU_inst <= "1111"; 
+                    if (is_last_message = '1') then -- stop running 
+                        jmp <= "00000001"; -- loop
+                        
+                    else
+                        jmp <= "00000001"; -- loop back
+                        
                     end if;
                    
                   
@@ -519,10 +538,10 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
     
         if program_counter = "10100001" then
             -- set message out last to high if final message
-            msgout_last <= is_last_message;
+            msgout_last_next <= is_last_message;
             msgout_valid_next <= '1';
         else
-            msgout_last <= '0';
+            msgout_last_next <= '0';
             msgout_valid_next <= '0';
         end if;
         

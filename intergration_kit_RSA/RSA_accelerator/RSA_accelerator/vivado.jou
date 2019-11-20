@@ -2,43 +2,12 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Nov 18 18:59:55 2019
-# Process ID: 5536
+# Start of session at: Wed Nov 20 10:45:12 2019
+# Process ID: 5592
 # Current directory: C:/Users/asgei/Desktop/manuals/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8044 C:\Users\asgei\Desktop\manuals\RSA\intergration_kit_RSA\RSA_accelerator\RSA_accelerator\RSA_accelerator.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5820 C:\Users\asgei\Desktop\manuals\RSA\intergration_kit_RSA\RSA_accelerator\RSA_accelerator\RSA_accelerator.xpr
 # Log file: C:/Users/asgei/Desktop/manuals/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/vivado.log
 # Journal file: C:/Users/asgei/Desktop/manuals/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/asgei/Desktop/manuals/RSA/intergration_kit_RSA/RSA_accelerator/RSA_accelerator/RSA_accelerator.xpr
-update_compile_order -fileset sources_1
-launch_simulation
-source RSA_accelerator_tb.tcl
-run 10 ms
-relaunch_sim
-run 10 ms
-relaunch_sim
-relaunch_sim
-current_wave_config {Untitled 1}
-add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/program_counter}} 
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {Untitled 1}
-add_wave {{/rsa_accelerator_tb/u_rsa_core/i_exponentiation/i_CTRL/m_reg}} 
-relaunch_sim
-run 10 ms
-run 10 ms
-relaunch_sim
-run 10 ms
-run 10 ms
-relaunch_sim
-relaunch_sim
-run 10 ms
-run 10 ms
-relaunch_sim
-run 10 ms
