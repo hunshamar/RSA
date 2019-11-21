@@ -26,7 +26,7 @@ architecture struct of rsa_accelerator_tb is
 
 	-- RENAME this constant to "long_test" for more comprehensive tests
 	-- "short_test" for shorter tests
-	constant C_TESTCASE_FOLDER: string := "long_test";
+	constant C_TESTCASE_FOLDER: string := "short_test";
 
 	-----------------------------------------------------------------------------
 	-- Clocks and reset
@@ -340,13 +340,13 @@ begin
 	-----------------------------------------------------------------------------
 	-- Clock and reset generation
 	-----------------------------------------------------------------------------
-	-- Generates a 50MHz clk
+	-- Generates a 100MHz clk
 	clk_gen: process is
 	begin
 		clk <= '1';
-		wait for 6 ns;
+		wait for 5 ns;
 		clk <= '0';
-		wait for 6 ns;
+		wait for 5 ns;
 	end process;
 
 	-- reset_n generator

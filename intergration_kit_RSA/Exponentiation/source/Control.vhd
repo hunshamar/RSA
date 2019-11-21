@@ -95,7 +95,7 @@ begin
         if (reset_n = '0') then
             --ready_in <= '1';
             --CLK_flag <= '0';
-            ready_in <= '1';
+            ready_in <= '0';
             msgout_valid <= '0';
             --program_c_r <= program_counter;
             
@@ -188,16 +188,16 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                   
                  when "00000001" =>
                     -- mean msgin not ready and valid
-                    jmp <= "00000001";
+                    -- jmp <= "00000001";
                     write_signal <= "1111";
                     A <= redundant;
                     B <= redundant;
                     ALU_inst <= "1111";
+                    
                     if (msgin_valid = '1') then
                         jmp <= "00000011";
                         ready_in_next <= '1';
                      
-                        
                     else
                         
                         jmp <= "00000001";
@@ -215,9 +215,11 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     write_signal <= "0111";
                     ready_in_next <= '0'; 
                     ALU_inst <= "1010"; --ret 255; ed_reg <= "000" & key_ed;
-                        n_Reg <= "000" & key_n;
-                        m_reg <= "000" & msgin_data;
-                ed_reg <= "000" & key_ed;
+                    
+                    -- create latches ( use next ?)    
+                    n_Reg <= "000" & key_n;
+                    m_reg <= "000" & msgin_data;
+                    ed_reg <= "000" & key_ed;
                     
                 
                 when "00000100" =>
@@ -495,14 +497,14 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
 --                    jmp <= "00000000";
                     
                     
-                    
+                    ready_in_next <= '0';
                     ALU_inst <= "0111"; 
-                    if (msgout_valid = '1' AND ready_out = '1') then -- stop running 
+                    if (msgout_valid = '1' AND ready_out = '1') then -- 
                         --ready_in_next <= '1';
-                        jmp <= "10100001";
+                        jmp <= "00000000";
                         
                     else
-                        jmp <= "00000000";
+                        jmp <= "10100001";
                         --ready_in_next <= '0';
                         
                     end if;
@@ -540,17 +542,21 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
     
     
     
-    process (program_counter, msgin_last)
+    process (program_counter, msgin_last, ready_out)
     begin
         if program_counter = "00000001" then 
             is_last_message <= msgin_last;
         end if; 
     
-        if program_counter = "10100001" and ready_out = '1' then
+        if program_counter = "10100001" then
             -- set message out last to high if final message
             msgout_last_next <= is_last_message;
             --msgout_valid <= '1';
-            msgout_valid_next <= '1';
+            if ready_out = '1' then
+                msgout_valid_next <= '0';
+            else
+                msgout_valid_next <= '1';
+            end if;
         else
             msgout_last_next <= '0';
             msgout_valid_next <= '0';
