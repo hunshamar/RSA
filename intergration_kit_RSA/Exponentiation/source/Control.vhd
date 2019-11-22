@@ -82,6 +82,7 @@ signal blakley_2_next : std_logic;
 signal msgout_valid_next : std_logic;
 signal msgout_last_next : std_logic;
 signal ready_in_next : std_logic;
+signal is_last_message_next : std_logic;
 
 constant redundant : STD_LOGIC_VECTOR (258 downto 0) := (others => '0');
 --constant x1 : STD_LOGIC_VECTOR (247 downto 0) := (others => '0');
@@ -101,6 +102,7 @@ begin
             
             --ALU_output <= (others => '0');
         elsif (clk'event and clk = '1' ) then
+            is_last_message <= is_last_message_next;
             msgout_valid <= msgout_valid_next;
             msgout_last <= msgout_last_next;
             ready_in <= ready_in_next;
@@ -217,9 +219,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     ALU_inst <= "1010"; --ret 255; ed_reg <= "000" & key_ed;
                     
                     -- create latches ( use next ?)    
-                    n_Reg <= "000" & key_n;
-                    m_reg <= "000" & msgin_data;
-                    ed_reg <= "000" & key_ed;
+                    
                     
                 
                 when "00000100" =>
@@ -510,6 +510,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     end if;
                     
                 when "10100010" =>
+                  ready_in_next <= '0';
                     write_signal <= "1111"; -- no reg
                     --done
                     A <= redundant;
@@ -545,8 +546,17 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
     process (program_counter, msgin_last, ready_out)
     begin
         if program_counter = "00000001" then 
-            is_last_message <= msgin_last;
+            is_last_message_next <= msgin_last;
+        else
+            is_last_message_next <= is_last_message; 
         end if; 
+        
+        if program_counter = "00000011" then
+            n_Reg <= "000" & key_n;
+            m_reg <= "000" & msgin_data;
+            ed_reg <= "000" & key_ed;
+        end if;
+        
     
         if program_counter = "10100001" then
             -- set message out last to high if final message
