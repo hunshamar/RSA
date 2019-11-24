@@ -83,6 +83,9 @@ signal msgout_valid_next : std_logic;
 signal msgout_last_next : std_logic;
 signal ready_in_next : std_logic;
 signal is_last_message_next : std_logic;
+signal ed_reg_next : std_logic_vector(258 downto 0);
+signal n_reg_next : std_logic_vector(258 downto 0);
+signal m_reg_next : std_logic_vector(258 downto 0);
 
 constant redundant : STD_LOGIC_VECTOR (258 downto 0) := (others => '0');
 --constant x1 : STD_LOGIC_VECTOR (247 downto 0) := (others => '0');
@@ -107,6 +110,10 @@ begin
             msgout_last <= msgout_last_next;
             ready_in <= ready_in_next;
             blakley_2 <= blakley_2_next;
+            n_Reg <= n_Reg_next;
+            m_reg <= m_reg_next;
+            ed_reg <= ed_reg_next;
+            
             --CLK_flag <= '1';
             if (jmp = "00000000") then 
                 program_counter <= program_counter+1;
@@ -151,7 +158,7 @@ begin
   
 end process;
     
-process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter, ready_in, ready_out)
+process(key_ed, key_n, msgin_data, msgin_valid, msgout_valid, CMP_flag, ALU_R, program_counter, ready_in, ready_out, C_reg, ed_reg, i_reg, m_reg, T1_reg, T2_reg, j_reg,a_reg, k_reg, R_reg, b_reg, n_reg, blakley_2)
     begin
           
            
@@ -226,7 +233,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     jmp <= "00000000";
                     A <= ed_reg;
                     B <= i_reg;
-                    ALU_inst <= "0011"; --ret bit B from A
+                    ALU_inst <= "0011"; --ret bit B from A in the CMP_flag
                     write_signal <= "1111";
                     ready_in_next <= '0';
                 
@@ -281,21 +288,23 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     ALU_inst <= "0101"; -- decrement i
                     ready_in_next <= '0';
                     
-                    
+                    -- probable combinational loop here ?
                 when "10000010" =>
                     jmp <= "00000000";
                     write_signal <= "1111"; --no write
-                    A <= C_reg;
+                    A <= redundant; --previously C_reg;
                     B <= redundant;
-                    ALU_inst <= "0111"; -- RetA
+                    ALU_inst <= "0111"; -- RetA and set CMP_flag=1
                     --jmp <= "00000111";
                     ready_in_next <= '0';
+                    
+                    -- probable combinational loop here ?
                 when "10000011" =>
                     jmp <= "00000000";
                     write_signal <= "1111"; --no write
-                    A <= ed_reg;
+                    A <= redundant; --previously ed_reg;
                     B <= redundant;
-                    ALU_inst <= "0111"; -- RetA
+                    ALU_inst <= "0111"; -- RetA and set CMP_flag=1
                     ready_in_next <= '0';
                     --jmp <= "00000111";    
                  when "10000100" =>
@@ -351,13 +360,13 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     jmp <= "01000110"; -- run blakely 1
                     ready_in_next <= '0';
                     
-
+                -- probable combinational loop here ?
                 when "01000110" => --blakely 
                   jmp <= "00000000";
                   write_signal <= "1111"; -- No_reg
-                  A <= a_reg;
+                  A <= redundant; --previously a_reg;
                   B <= redundant;
-                  ALU_inst <= "0111";    
+                  ALU_inst <= "0111"; -- RetA and set CMP_flag=1
                   ready_in_next <= '0';    
                     
                     
@@ -486,11 +495,11 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     ready_in_next <= '0';
                   
                   
-                
+                -- probable combinational loop here ?
                 when "10100001" =>
                  write_signal <= "1111"; -- no reg
                     --done
-                    A <= C_reg;
+                    A <= redundant; --previously C_reg;
                     B <= redundant;
                     
 --                    if (ready_out <= 1)
@@ -498,7 +507,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
                     
                     
                     ready_in_next <= '0';
-                    ALU_inst <= "0111"; 
+                    ALU_inst <= "0111"; --retA and set CMP_flag=1
                     if (msgout_valid = '1' AND ready_out = '1') then -- 
                         --ready_in_next <= '1';
                         jmp <= "00000000";
@@ -543,7 +552,7 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
     
     
     
-    process (program_counter, msgin_last, ready_out)
+    process (program_counter, msgin_last, ready_out, is_last_message, key_n, msgin_data, key_ed, blakley_2)
     begin
         if program_counter = "00000001" then 
             is_last_message_next <= msgin_last;
@@ -552,9 +561,13 @@ process(key_ed, key_n, msgin_data, msgin_valid, CMP_flag, ALU_R, program_counter
         end if; 
         
         if program_counter = "00000011" then
-            n_Reg <= "000" & key_n;
-            m_reg <= "000" & msgin_data;
-            ed_reg <= "000" & key_ed;
+            n_Reg_next <= "000" & key_n;
+            m_reg_next <= "000" & msgin_data;
+            ed_reg_next <= "000" & key_ed;
+        else
+            n_Reg_next <= n_Reg;
+            m_reg_next <= m_reg;
+            ed_reg_next <= ed_reg;
         end if;
         
     
