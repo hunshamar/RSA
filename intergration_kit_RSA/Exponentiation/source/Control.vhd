@@ -86,6 +86,7 @@ signal is_last_message_next : std_logic;
 signal ed_reg_next : std_logic_vector(258 downto 0);
 signal n_reg_next : std_logic_vector(258 downto 0);
 signal m_reg_next : std_logic_vector(258 downto 0);
+signal msgout_data_next : STD_LOGIC_VECTOR (255 downto 0);
 
 constant redundant : STD_LOGIC_VECTOR (258 downto 0) := (others => '0');
 --constant x1 : STD_LOGIC_VECTOR (247 downto 0) := (others => '0');
@@ -141,7 +142,7 @@ begin
             n_Reg <= n_Reg_next;
             m_reg <= m_reg_next;
             ed_reg <= ed_reg_next;
-            
+            msgout_data <= msgout_data_next;            
             --CLK_flag <= '1';
             if (jmp = "00000000") then 
                 program_counter <= program_counter+1;
@@ -217,7 +218,7 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
 --           ALU_inst <= "1111";
            
 --        else
-       msgout_data  <= C_reg(255 downto 0);
+
             case program_counter is
             
 --               
@@ -630,6 +631,7 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
     
         if program_counter = "10100001" then
             -- set message out last to high if final message
+            msgout_data_next  <= C_reg(255 downto 0);
             msgout_last_next <= is_last_message;
             --msgout_valid <= '1';
             if ready_out = '1' then
@@ -638,6 +640,7 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
                 msgout_valid_next <= '1';
             end if;
         else
+            msgout_data_next <= msgout_data;
             msgout_last_next <= '0';
             msgout_valid_next <= '0';
         end if;
