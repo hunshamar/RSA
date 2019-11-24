@@ -263,20 +263,39 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
                     ALU_inst <= "0011"; --ret bit B from A in the CMP_flag
                     write_signal <= "1111";
                     ready_in_next <= '0';
+                    if CMP_flag = '1' then
+                        jmp <= "00000101"; --ret_A
+                    else
+                        jmp <= "00000110"; --ret 1
+                    end if;
                 
-                when "00000101" =>
-                    jmp <= "00000000";
-                    write_signal <= "0011"; -- C_reg
+--                when "00000101" =>
+--                    jmp <= "00000000";
+--                    write_signal <= "0011"; -- C_reg
+--                    A <= M_reg;
+--                    B <= redundant;
+--                    if CMP_flag = '1' then
+--                        ALU_inst <= "0111"; --ret_A
+--                    else
+--                        ALU_inst <= "1001"; --ret 1
+--                    end if;
+--                    ready_in_next <= '0';
+                when "00000101" => --ret A
+                    jmp <= "00000111";
+                    ALU_inst <= "0111"; 
                     A <= M_reg;
                     B <= redundant;
-                    if CMP_flag = '1' then
-                        ALU_inst <= "0111"; --ret_A
-                    else
-                        ALU_inst <= "1001"; --ret 1
-                    end if;
-                    ready_in_next <= '0';
+                   ready_in_next <= '0';
+                   write_signal <= "0011";
+                when "00000110" => --ret 1
+                    jmp <= "00000111";
+                    ALU_inst <= "1001"; 
+                    A <= redundant;
+                    B <= redundant;
+                   ready_in_next <= '0';
+                   write_signal <= "0011";
                 
-                when "00000110" =>
+                when "00000111" =>
                     jmp <= "00000000";
                    
                     A <= redundant;
@@ -294,7 +313,7 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
 --                   jmp <= "00000000";
 --                   ready_in_next <= '0';
                    
-                when "00000111" =>
+                when "00001000" =>
                    write_signal <= "1111"; --no write
                    A <= i_reg;
                    B <= T1_reg;
@@ -368,7 +387,7 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
                     if CMP_flag = '1' then
                         jmp <= "00000000"; --continue
                     else 
-                        jmp <= "00000111"; --dont do blakley 2       
+                        jmp <= "00001000"; --dont do blakley 2       
                     end if;
                     ready_in_next <= '0';
                     
@@ -462,29 +481,33 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
                     B <= k_reg;
                     ALU_inst <= "0011"; -- return bit B from A
                     ready_in_next <= '0';
---                   
-                when "01001111" => 
-                    jmp <= "00000000";
-                    
-                    A <= R_reg;
-                    B <= b_reg;
-                    write_signal <= "0110"; --R_reg
-                   
                     if CMP_flag = '1' then
                         --msgout_valid <= '1';
-                        ALU_inst <= "0010"; -- left_shift__A_and_add_B
+                        jmp <= "01001111"; -- left_shift__A_and_add_B
                     else 
-                        ALU_inst <= "0001"; --left shift A
+                        jmp <= "01010000"; --left shift A
                     end if;
-                    ready_in_next <= '0';
                     
-                when "01010000" => 
-                    jmp <= "00000000";
-                    A <= R_Reg;
-                    B <= n_reg;
-                    ALU_inst <= "0000";
-                    write_signal <= "0110"; -- R_reg
+--                   
+                when "01001111" => --left_shift_a_and_add_b
+                    jmp <= "01010001";
                     ready_in_next <= '0';
+                    ALU_inst <= "0010";
+                    A <= R_reg;
+                    B <= b_reg;
+                    write_signal <= "0110";
+                    
+                   
+                    
+                when "01010000" => --to run left_shift_a and then jump to nexttt
+                    jmp <= "01010001";
+                    ready_in_next <= '0';
+                    ALU_inst <= "0001";
+                    A <= R_reg;
+                    B <= b_reg;
+                    write_signal <= "0110";
+                
+                    
                 when "01010001" => 
                     jmp <= "00000000";
                     A <= R_Reg;
@@ -492,8 +515,15 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
                     ALU_inst <= "0000";
                     write_signal <= "0110"; -- R_reg
                     ready_in_next <= '0';
+                when "01010010" => 
+                    jmp <= "00000000";
+                    A <= R_Reg;
+                    B <= n_reg;
+                    ALU_inst <= "0000";
+                    write_signal <= "0110"; -- R_reg
+                    ready_in_next <= '0';
                     
-                when "01010010" =>  ----
+                when "01010011" =>  ----
                     jmp <= "00000000";
                     A <= k_reg;
                     B <= redundant;
@@ -501,7 +531,7 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
                     write_signal <= "1001"; -- k_reg
                     ready_in_next <= '0';
                     
-                when "01010011" => 
+                when "01010100" => 
                     A <= j_reg;
                     B <= redundant;
                     ALU_inst <= "0110"; --increment
@@ -509,12 +539,12 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
                     jmp <= "01001101";
                     ready_in_next <= '0';
                   
-                when "01101100" => -- after while
+                when "01101101" => -- after while
                     write_signal <= "0011"; -- C reg
                     if blakley_2 = '0' then
                         jmp <= "10000110"; --do second
                     else
-                        jmp <= "00000111"; --done with second. back to start. 
+                        jmp <= "00001000"; --done with second. back to start. 
                     end if;
                     A <= R_reg;
                     B <= redundant;
@@ -612,7 +642,7 @@ process(msgin_valid, msgout_valid, CMP_flag, program_counter, ready_out, C_reg, 
             msgout_valid_next <= '0';
         end if;
         
-        if program_counter = "00000111" or program_counter = "00000001" then
+        if program_counter = "00001000" or program_counter = "00000001" then
             blakley_2_next <= '0';
         elsif program_counter = "10000110" then
             blakley_2_next <= '1';
